@@ -1,0 +1,49 @@
+{
+    "name": "Carolina Carvalhosa Simōes",
+    "occupation": "Full-Stack Developer",
+    "education": "Computer Science Bachelor's Degree Student",
+    "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
+    "github": "CarolCarvalhosa",
+    "title": "Portfolios",
+    "portfolios": [
+        {
+            "id": "web-mobile-dev",
+            "name": "Web & Mobile Development",
+            "description": "Front-end & Back-end development skills",
+            "projects": [
+                {
+                    "id": "go-barber",
+                    "name": "Go Barber",
+                    "description": "Web and mobile app to create and manage ONG cases.",
+                    "skills": [
+                        "ReactJS",
+                        "NodeJS",
+                        "TypeScript"
+                    ]
+                },
+                {
+                    "id": "be-the-hero",
+                    "name": "Be The Hero",
+                    "description": "Web and mobile app to create and manage appointments for hairdressers.",
+                    "skills": [
+                        "ReactJS",
+                        "NodeJS",
+                        "Expo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "game-dev",
+            "name": "Game Development",
+            "description": "Unity Engine development skills",
+            "projects": []
+        },
+        {
+            "id": "design-art",
+            "name": "Design & Art",
+            "description": "Illustration, Visual Identity & Draw skills",
+            "projects": []
+        }
+    ]
+}
