@@ -7,10 +7,10 @@ import { ReactComponent as ReactJS } from '../../svgs/reactjs.svg';
 import { ReactComponent as NodeJS } from '../../svgs/nodejs.svg';
 import { ReactComponent as TS } from '../../svgs/ts.svg';
 import { Tooltip } from '@material-ui/core';
-import { GITHUB_TOOLTIP } from '../../TooltipText';
+import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import data from '../../data/data.json';
 
-const PortfolioCard: React.FC<ProjectCardProps> = ({ id, name, description, skills }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, name, description, skills }) => {
     const classes = useStyles();
 
     const handleSeeOnGitHub = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -38,11 +38,11 @@ const PortfolioCard: React.FC<ProjectCardProps> = ({ id, name, description, skil
             <div className={'icons-container'}>
                 {skills.map(skill => {
                     if (skill.toLowerCase() === 'reactjs')
-                        return <Tooltip title={skill}><ReactJS className={'icon'} /></Tooltip>
+                        return <Tooltip key={skill} title={skill}><ReactJS className={'icon'} /></Tooltip>
                     else if (skill.toLowerCase() === 'nodejs')
-                        return <Tooltip title={skill}><NodeJS className={'icon'} /></Tooltip>
+                        return <Tooltip key={skill} title={skill}><NodeJS className={'icon'} /></Tooltip>
                     else if (skill.toLowerCase() === 'typescript')
-                        return <Tooltip title={skill}><TS className={'icon'} /></Tooltip>
+                        return <Tooltip key={skill} title={skill}><TS className={'icon'} /></Tooltip>
                     else
                         return '';
                 })}
@@ -51,4 +51,4 @@ const PortfolioCard: React.FC<ProjectCardProps> = ({ id, name, description, skil
     );
 }
 
-export default PortfolioCard;
+export default ProjectCard;

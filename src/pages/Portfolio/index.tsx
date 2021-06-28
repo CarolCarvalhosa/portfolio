@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 // import { RouteComponentProps } from 'react-router-dom';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
 import { PortfolioData } from '../../types/DataTypes';
 import { GetAppRounded } from '@material-ui/icons';
+import { DOWNLOAD_DISABLED_TOOLTIP, DOWNLOAD_TOOLTIP } from '../../helpers/TooltipText';
+import ResumePDF from '../ResumePDF';
 import { Tooltip } from '@material-ui/core';
-import { DOWNLOAD_DISABLED_TOOLTIP, DOWNLOAD_TOOLTIP } from '../../TooltipText';
 
 const Portfolio: React.FC<any> = ({ ...props }) => {
     const classes = useStyles();
@@ -33,8 +35,10 @@ const Portfolio: React.FC<any> = ({ ...props }) => {
                         DOWNLOAD_TOOLTIP
                         : DOWNLOAD_DISABLED_TOOLTIP} placement={'top'}>
                         <button disabled={!canDownload}
-                            className={canDownload ? 'download-btn' : 'download-btn-disabled'} onClick={() => { }}>
-                            <GetAppRounded className={canDownload ? 'download-icon' : 'download-icon-disabled'} />
+                            className={canDownload ? 'download-btn' : 'download-btn-disabled'}>
+                            <PDFDownloadLink document={ <ResumePDF /> } fileName="resume.pdf">
+                                <GetAppRounded className={canDownload ? 'download-icon' : 'download-icon-disabled'} />
+                            </PDFDownloadLink>
                         </button>
                     </Tooltip>
                 </div>
