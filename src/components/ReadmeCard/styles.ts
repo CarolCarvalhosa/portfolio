@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles(theme => ({
     root: {
         textDecoration: 'none',
-        maxWidth: '35%',
+        minWidth: '80%',
         textAlign: 'left',
         background: '#222222',
         border: 'solid 3px #222222',
@@ -12,7 +12,6 @@ export const useStyles = makeStyles(theme => ({
         marginRight: '3%',
         marginBottom: '3%',
         [theme.breakpoints.down('md')]: {
-            maxWidth: '100%',
             flexDirection: 'column',
             margin: 0,
             padding: '8%',
@@ -22,18 +21,28 @@ export const useStyles = makeStyles(theme => ({
             border: 'solid 3px #00CED1',
         },
 
-        '& .portfolio-title-container': {
-            width: 'max-content',
-        },
-
-        '& .title-icon': {
-            color: '#00CED1',
-            marginRight: '10px',
-        },
-
         '& .title-icon-container': {
             display: 'flex',
             alignItems: 'center',
+        },
+
+        '& .github-btn': {
+            cursor: 'pointer',
+            background: 'transparent',
+            border: 0,
+            marginLeft: '10px',
+        },
+
+        '& .github-icon': {
+            color: '#00CED1',
+        },
+
+        '& .github-btn:hover .github-icon': {
+            color: '#FFFFFF',
+        },
+
+        '& .portfolio-title-container': {
+            width: 'max-content',
         },
 
         '& .half-blue-line': {
@@ -46,6 +55,23 @@ export const useStyles = makeStyles(theme => ({
 
         '&:hover .half-blue-line': {
             transform: 'scale(1.1, 1)',
+        },
+
+        '& .icons-container': {
+            display: 'flex',
+            justifyContent: 'flex-start',
+        },
+
+        '& .icon': {
+            marginRight: '5px',
+            height: '40px',
+        },
+
+        '& .readme-container': {
+            background: '#111111',
+            marginTop: '3%',
+            padding: '3%',
+            borderRadius: '20px',
         },
     },
 }));

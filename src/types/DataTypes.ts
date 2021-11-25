@@ -8,4 +8,11 @@ export type PortfolioData = {
         description: string;
         skills: string[];
     }[];
-}
+};
+
+export type ProjectData = {
+    id: string;
+    name: string;
+    description: string;
+    skills: string[];
+};

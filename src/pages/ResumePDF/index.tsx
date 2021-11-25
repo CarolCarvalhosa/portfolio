@@ -1,31 +1,36 @@
-import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import React, { useEffect, useState } from 'react';
+import { Page, Text, View, Document } from '@react-pdf/renderer';
+import { styles } from './styles';
+import data from '../../data/data.json';
 
-// Create styles
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4'
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1
+const ResumePDF: React.FC = () => {
+  const [name, setName] = useState('');
+
+  const getName = () => {
+    const fullName = data.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    const fullNameSplit = fullName.split(' ');
+    const firstName = fullNameSplit[0];
+    const lastName = fullNameSplit[fullNameSplit.length - 1];
+    return firstName + ' ' + lastName;
   }
-});
 
-// Create Document Component
-const ResumePDF: React.FC<any> = () => (
-  <Document>
+  useEffect(() => {
+    setName(getName);
+  }, []);
+
+  return (
+    <Document>
     <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
+      <View style={styles.header}>
+        <Text>{name}</Text>
+        <Text>{data.occupation.toUpperCase()}</Text>
+        <Text>CAREER GOALS</Text>
+        <View style={styles.whiteLine}></View>
+        <Text>SOME TEXT</Text>
       </View>
     </Page>
   </Document>
-);
+  )
+};
 
 export default ResumePDF;

@@ -17,8 +17,8 @@ const Portfolio: React.FC<any> = ({ ...props }) => {
     const canDownload = portfolio?.projects.length !== 0;
 
     useEffect(() => {
-        setPortfolio(data.portfolios.find(portfolio => portfolio.id === props?.match?.params?.key));
-    }, [props?.match?.params?.key]);
+        setPortfolio(data.portfolios.find(portfolio => portfolio.id === props?.match?.params?.id));
+    }, [props?.match?.params?.id]);
 
     return (
         <div className={classes.root}>
@@ -50,6 +50,7 @@ const Portfolio: React.FC<any> = ({ ...props }) => {
                             name={project.name}
                             description={project.description}
                             skills={project.skills}
+                            portfolioId={portfolio?.id}
                         />
                     ))}
                 </div>

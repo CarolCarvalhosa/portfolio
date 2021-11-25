@@ -10,7 +10,7 @@ import { Tooltip } from '@material-ui/core';
 import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import data from '../../data/data.json';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, name, description, skills }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, name, description, skills, portfolioId }) => {
     const classes = useStyles();
 
     const handleSeeOnGitHub = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, name, description, skills
     };
 
     return (
-        <Link className={classes.root} to="/portfolio">
+        <Link className={classes.root} to={`/readme/${portfolioId}/${id}`}>
             <div className={'portfolio-title-container'}>
                 <div className={'title-icon-container'}>
                     <h4>{name}</h4>

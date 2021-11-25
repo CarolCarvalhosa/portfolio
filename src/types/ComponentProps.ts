@@ -17,4 +17,11 @@ export type ProjectCardProps = {
     name: string;
     description: string;
     skills: string[];
+    portfolioId: string;
+}
+
+export type ReadmeProps = {
+    id?: string;
+    name?: string;
+    portfolioId?: string;
 }
