@@ -10,15 +10,22 @@ import { GetAppRounded } from '@material-ui/icons';
 import { DOWNLOAD_DISABLED_TOOLTIP, DOWNLOAD_TOOLTIP } from '../../helpers/TooltipText';
 import ResumePDF from '../ResumePDF';
 import { Tooltip } from '@material-ui/core';
+import { useLocation } from 'react-router-dom';
 
-const Portfolio: React.FC<any> = ({ ...props }) => {
+type LocationParams = {
+  id: string;
+};
+
+const Portfolio: React.FC = () => {
   const classes = useStyles();
+  const location = useLocation<LocationParams>();
+
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
   const canDownload = portfolio?.projects.length !== 0;
 
   useEffect(() => {
-    setPortfolio(data.portfolios.find((portfolio) => portfolio.id === props?.match?.params?.id));
-  }, [props?.match?.params?.id]);
+    setPortfolio(data.portfolios.find((portfolio) => portfolio.id === location?.state?.id));
+  }, [location?.state?.id]);
 
   return (
     <div className={classes.root}>

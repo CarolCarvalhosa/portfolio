@@ -8,25 +8,26 @@ import PersonalInfoCard from '../../components/PersonalInfoCard';
 import { ProjectData } from '../../types/DataTypes';
 import ReadmeCard from '../../components/ReadmeCard';
 import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
+import { useLocation } from 'react-router-dom';
 
-const Readme: React.FC<any> = ({ ...props }) => {
+type LocationParams = {
+  key: string;
+  id: string;
+};
+
+const Readme: React.FC = () => {
   const classes = useStyles();
+  const location = useLocation<LocationParams>();
+
   const [project, setProject] = useState<ProjectData | undefined>();
 
   useEffect(() => {
-    console.log(data.portfolios.find((portfolio) => portfolio.id === props?.match?.params?.key));
-
-    console.log(
-      data.portfolios
-        .find((portfolio) => portfolio.id === props?.match?.params?.key)
-        ?.projects.find((project) => project.id === props?.match?.params?.id)
-    );
     setProject(
       data.portfolios
-        .find((portfolio) => portfolio.id === props?.match?.params?.key)
-        ?.projects.find((project) => project.id === props?.match?.params?.id)
+        .find((portfolio) => portfolio.id === location?.state?.key)
+        ?.projects.find((project) => project.id === location?.state?.id)
     );
-  }, [props?.match?.params?.id, props?.match?.params?.key]);
+  }, [location?.state?.id, location?.state?.key]);
 
   const handleSeeOnGitHub = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -51,11 +52,7 @@ const Readme: React.FC<any> = ({ ...props }) => {
           </Tooltip>
         </div>
         <div className="project-cards-container">
-          <ReadmeCard
-            id={project?.id}
-            name={project?.name}
-            portfolioId={props?.match?.params?.key}
-          />
+          <ReadmeCard id={project?.id} name={project?.name} portfolioId={location?.state?.key} />
         </div>
       </div>
     </div>

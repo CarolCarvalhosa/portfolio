@@ -15,7 +15,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description }) 
   };
 
   return (
-    <Link className={classes.root} to={`/portfolio/${id}`}>
+    <Link className={classes.root} to={{ pathname: `/portfolio/${id}`, state: { id } }}>
       <div className={'portfolio-title-container'}>
         <div className={'title-icon-container'}>
           <RenderIcon />
