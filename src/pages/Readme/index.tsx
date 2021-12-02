@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { RouteComponentProps } from 'react-router-dom';
 import { Tooltip } from '@material-ui/core';
 import { GitHub } from '@material-ui/icons';
 import { useStyles } from './styles';

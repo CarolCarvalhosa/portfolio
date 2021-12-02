@@ -68,10 +68,14 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     '& .readme-container': {
-      background: '#111111',
-      marginTop: '3%',
-      padding: '3%',
-      borderRadius: '20px',
+      'background': '#111111',
+      'marginTop': '3%',
+      'padding': '3%',
+      'borderRadius': '20px',
+
+      '& ul': {
+        color: 'white',
+      },
     },
   },
 }));

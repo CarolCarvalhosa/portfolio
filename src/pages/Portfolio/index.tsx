@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 // import { RouteComponentProps } from 'react-router-dom';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useStyles } from './styles';
@@ -21,7 +21,10 @@ const Portfolio: React.FC = () => {
   const location = useLocation<LocationParams>();
 
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
-  const canDownload = portfolio?.projects.length !== 0;
+
+  const canDownload = useMemo(() => {
+    return portfolio?.projects.length !== 0;
+  }, [portfolio]);
 
   useEffect(() => {
     setPortfolio(data.portfolios.find((portfolio) => portfolio.id === location?.state?.id));
@@ -46,11 +49,13 @@ const Portfolio: React.FC = () => {
               disabled={!canDownload}
               className={canDownload ? 'download-btn' : 'download-btn-disabled'}
             >
-              <PDFDownloadLink document={<ResumePDF />} fileName="resume.pdf">
-                <GetAppRounded
-                  className={canDownload ? 'download-icon' : 'download-icon-disabled'}
-                />
-              </PDFDownloadLink>
+              {canDownload ? (
+                <PDFDownloadLink document={<ResumePDF />} fileName="resume.pdf">
+                  <GetAppRounded className={'download-icon'} />
+                </PDFDownloadLink>
+              ) : (
+                <GetAppRounded className={'download-icon-disabled'} />
+              )}
             </button>
           </Tooltip>
         </div>
