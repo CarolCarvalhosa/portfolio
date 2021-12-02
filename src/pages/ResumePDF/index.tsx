@@ -7,12 +7,15 @@ const ResumePDF: React.FC = () => {
   const [name, setName] = useState('');
 
   const getName = () => {
-    const fullName = data.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    const fullName = data.name
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toUpperCase();
     const fullNameSplit = fullName.split(' ');
     const firstName = fullNameSplit[0];
     const lastName = fullNameSplit[fullNameSplit.length - 1];
     return firstName + ' ' + lastName;
-  }
+  };
 
   useEffect(() => {
     setName(getName);
@@ -20,17 +23,17 @@ const ResumePDF: React.FC = () => {
 
   return (
     <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.header}>
-        <Text>{name}</Text>
-        <Text>{data.occupation.toUpperCase()}</Text>
-        <Text>CAREER GOALS</Text>
-        <View style={styles.whiteLine}></View>
-        <Text>SOME TEXT</Text>
-      </View>
-    </Page>
-  </Document>
-  )
+      <Page size="A4" style={styles.page}>
+        <View style={styles.header}>
+          <Text>{name}</Text>
+          <Text>{data.occupation.toUpperCase()}</Text>
+          <Text>CAREER GOALS</Text>
+          <View style={styles.whiteLine}></View>
+          <Text>SOME TEXT</Text>
+        </View>
+      </Page>
+    </Document>
+  );
 };
 
 export default ResumePDF;

@@ -12,51 +12,56 @@ import ResumePDF from '../ResumePDF';
 import { Tooltip } from '@material-ui/core';
 
 const Portfolio: React.FC<any> = ({ ...props }) => {
-    const classes = useStyles();
-    const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
-    const canDownload = portfolio?.projects.length !== 0;
+  const classes = useStyles();
+  const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
+  const canDownload = portfolio?.projects.length !== 0;
 
-    useEffect(() => {
-        setPortfolio(data.portfolios.find(portfolio => portfolio.id === props?.match?.params?.id));
-    }, [props?.match?.params?.id]);
+  useEffect(() => {
+    setPortfolio(data.portfolios.find((portfolio) => portfolio.id === props?.match?.params?.id));
+  }, [props?.match?.params?.id]);
 
-    return (
-        <div className={classes.root}>
-            <PersonalInfoCard
-                name={data.name}
-                avatar={data.avatar}
-                occupation={data.occupation}
-                education={data.education}
-            />
-            <div className={'projects-container'}>
-                <div className={'name-and-icon-container'}>
-                    <h1>{portfolio?.name}</h1>
-                    <Tooltip title={canDownload ?
-                        DOWNLOAD_TOOLTIP
-                        : DOWNLOAD_DISABLED_TOOLTIP} placement={'top'}>
-                        <button disabled={!canDownload}
-                            className={canDownload ? 'download-btn' : 'download-btn-disabled'}>
-                            <PDFDownloadLink document={ <ResumePDF /> } fileName="resume.pdf">
-                                <GetAppRounded className={canDownload ? 'download-icon' : 'download-icon-disabled'} />
-                            </PDFDownloadLink>
-                        </button>
-                    </Tooltip>
-                </div>
-                <div className={'project-cards-container'}>
-                    {portfolio?.projects?.map(project => (
-                        <ProjectCard
-                            key={project.id}
-                            id={project.id}
-                            name={project.name}
-                            description={project.description}
-                            skills={project.skills}
-                            portfolioId={portfolio?.id}
-                        />
-                    ))}
-                </div>
-            </div>
+  return (
+    <div className={classes.root}>
+      <PersonalInfoCard
+        name={data.name}
+        avatar={data.avatar}
+        occupation={data.occupation}
+        education={data.education}
+      />
+      <div className={'projects-container'}>
+        <div className={'name-and-icon-container'}>
+          <h1>{portfolio?.name}</h1>
+          <Tooltip
+            title={canDownload ? DOWNLOAD_TOOLTIP : DOWNLOAD_DISABLED_TOOLTIP}
+            placement={'top'}
+          >
+            <button
+              disabled={!canDownload}
+              className={canDownload ? 'download-btn' : 'download-btn-disabled'}
+            >
+              <PDFDownloadLink document={<ResumePDF />} fileName="resume.pdf">
+                <GetAppRounded
+                  className={canDownload ? 'download-icon' : 'download-icon-disabled'}
+                />
+              </PDFDownloadLink>
+            </button>
+          </Tooltip>
         </div>
-    );
-}
+        <div className={'project-cards-container'}>
+          {portfolio?.projects?.map((project) => (
+            <ProjectCard
+              key={project.id}
+              id={project.id}
+              name={project.name}
+              description={project.description}
+              skills={project.skills}
+              portfolioId={portfolio?.id}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Portfolio;
