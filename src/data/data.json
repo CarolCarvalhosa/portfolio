@@ -10,6 +10,7 @@
       "id": "web-mobile-dev",
       "name": "Web & Mobile Development",
       "description": "Front-end & Back-end development skills",
+      "active": true,
       "projects": [
         {
           "id": "go-barber",
@@ -29,12 +30,14 @@
       "id": "game-dev",
       "name": "Game Development",
       "description": "Unity Engine development skills",
+      "active": false,
       "projects": []
     },
     {
       "id": "design-art",
       "name": "Design & Art",
       "description": "Illustration, Visual Identity & Draw skills",
+      "active": false,
       "projects": []
     }
   ]

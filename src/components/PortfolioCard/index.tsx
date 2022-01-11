@@ -3,9 +3,10 @@ import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 import { Web, SportsEsports, Brush } from '@material-ui/icons';
 import { PortfolioCardProps } from '../../types/ComponentProps';
+import { Tooltip } from '@material-ui/core';
 
-const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description }) => {
-  const classes = useStyles();
+const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description, active }) => {
+  const classes = useStyles({ active: active });
 
   const RenderIcon = () => {
     if (id === 'web-mobile-dev') return <Web className={'title-icon'} />;
@@ -15,16 +16,23 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description }) 
   };
 
   return (
-    <Link className={classes.root} to={{ pathname: `/portfolio/${id}`, state: { id } }}>
-      <div className={'portfolio-title-container'}>
-        <div className={'title-icon-container'}>
-          <RenderIcon />
-          <h4>{name}</h4>
+    <Tooltip title={!active ? 'not available yet' : ''}>
+      <Link
+        className={classes.root}
+        to={{ pathname: `/portfolio/${id}`, state: { id } }}
+        // disable link if portfolio is not active
+        onClick={(e) => (!active ? e.preventDefault() : null)}
+      >
+        <div className={'portfolio-title-container'}>
+          <div className={'title-icon-container'}>
+            <RenderIcon />
+            <h4>{name}</h4>
+          </div>
+          <div className={'half-blue-line'} />
         </div>
-        <div className={'half-blue-line'} />
-      </div>
-      <p>{description}</p>
-    </Link>
+        <p>{description}</p>
+      </Link>
+    </Tooltip>
   );
 };
 

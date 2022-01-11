@@ -1,6 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) => ({
+type PortfolioCardStyles = {
+  active: boolean;
+};
+
+export const useStyles = makeStyles<Theme, PortfolioCardStyles>((theme) => ({
   root: {
     'textDecoration': 'none',
     'maxWidth': '35%',
@@ -11,6 +15,8 @@ export const useStyles = makeStyles((theme) => ({
     'borderRadius': '30px',
     'marginRight': '3%',
     'marginBottom': '3%',
+    'opacity': ({ active }) => (active ? '1' : '0.5'),
+    'cursor': ({ active }) => (active ? 'pointer' : 'not-allowed'),
     [theme.breakpoints.down('md')]: {
       maxWidth: '100%',
       flexDirection: 'column',

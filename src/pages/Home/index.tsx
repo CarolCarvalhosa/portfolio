@@ -25,6 +25,7 @@ const Home: React.FC = () => {
               id={portfolio.id}
               name={portfolio.name}
               description={portfolio.description}
+              active={portfolio.active}
             />
           ))}
         </div>

@@ -3,6 +3,7 @@ import { useStyles } from './styles';
 import { ReadmeProps } from '../../types/ComponentProps';
 import ReactMarkdown from 'react-markdown';
 import { getReadme } from '../../services/routes/readme.routes';
+import { AxiosError } from 'axios';
 
 const ReadmeCard: React.FC<ReadmeProps> = ({ id, name, portfolioId }) => {
   const classes = useStyles();
@@ -14,8 +15,20 @@ const ReadmeCard: React.FC<ReadmeProps> = ({ id, name, portfolioId }) => {
   }, [id]);
 
   const fetchReadme = async (projectId: string) => {
-    const response = await getReadme(projectId);
-    setRawReadme(response);
+    try {
+      const response = await getReadme(projectId);
+      setRawReadme(response);
+    } catch (e) {
+      const error: AxiosError = e as AxiosError;
+
+      if (error?.response?.status === 404) {
+        // eslint-disable-next-line no-console
+        console.error('Readme data was not found for this repository.');
+      } else {
+        // eslint-disable-next-line no-console
+        console.error('Unable to load readme data:', error?.response?.data);
+      }
+    }
   };
 
   return (

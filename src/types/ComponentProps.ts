@@ -10,6 +10,7 @@ export type PortfolioCardProps = {
   id: string;
   name: string;
   description: string;
+  active: boolean;
 };
 
 export type ProjectCardProps = {
