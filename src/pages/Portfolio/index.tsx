@@ -33,7 +33,7 @@ const Portfolio: React.FC = () => {
   return (
     <div className={classes.root}>
       <PersonalInfoCard
-        name={data.name}
+        name={data.fullName}
         avatar={data.avatar}
         occupation={data.occupation}
         education={data.education}
@@ -50,7 +50,7 @@ const Portfolio: React.FC = () => {
               className={canDownload ? 'download-btn' : 'download-btn-disabled'}
             >
               {canDownload ? (
-                <PDFDownloadLink document={<ResumePDF />} fileName="resume.pdf">
+                <PDFDownloadLink document={<ResumePDF />} fileName={`${data.name} - Resume.pdf`}>
                   <GetAppRounded className={'download-icon'} />
                 </PDFDownloadLink>
               ) : (

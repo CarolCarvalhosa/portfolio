@@ -36,7 +36,7 @@ const Readme: React.FC = () => {
   return (
     <div className={classes.root}>
       <PersonalInfoCard
-        name={data.name}
+        name={data.fullName}
         avatar={data.avatar}
         occupation={data.occupation}
         education={data.education}
@@ -51,7 +51,7 @@ const Readme: React.FC = () => {
           </Tooltip>
         </div>
         <div className="project-cards-container">
-          <ReadmeCard id={project?.id} name={project?.name} portfolioId={location?.state?.key} />
+          <ReadmeCard id={project?.id} handleSeeOnGitHub={handleSeeOnGitHub} />
         </div>
       </div>
     </div>

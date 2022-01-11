@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     'textDecoration': 'none',
     'minWidth': '80%',
@@ -65,6 +65,26 @@ export const useStyles = makeStyles((theme) => ({
     '& .icon': {
       marginRight: '5px',
       height: '40px',
+    },
+
+    '& .github-readme-btn-container': {
+      'display': 'flex',
+      'width': '100%',
+      'justifyContent': 'center',
+
+      '& .github-readme-btn': {
+        'width': '95%',
+        'marginTop': '20px',
+        'color': '#333333',
+        'fontWeight': 'bold',
+        'backgroundColor': '#00CED1',
+        'borderRadius': '20px',
+        'transition': 'width 0.5s ease-in-out',
+
+        '&:hover': {
+          width: '100%',
+        },
+      },
     },
 
     '& .readme-container': {

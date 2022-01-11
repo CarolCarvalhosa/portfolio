@@ -4,8 +4,9 @@ import { ReadmeProps } from '../../types/ComponentProps';
 import ReactMarkdown from 'react-markdown';
 import { getReadme } from '../../services/routes/readme.routes';
 import { AxiosError } from 'axios';
+import { Button } from '@material-ui/core';
 
-const ReadmeCard: React.FC<ReadmeProps> = ({ id, name, portfolioId }) => {
+const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
   const classes = useStyles();
 
   const [rawReadme, setRawReadme] = useState<string>('');
@@ -41,6 +42,15 @@ const ReadmeCard: React.FC<ReadmeProps> = ({ id, name, portfolioId }) => {
       </div>
       <div className={'readme-container'}>
         <ReactMarkdown>{rawReadme}</ReactMarkdown>
+      </div>
+      <div className="github-readme-btn-container">
+        <Button
+          variant="contained"
+          className="github-readme-btn"
+          onClick={(e) => handleSeeOnGitHub(e)}
+        >
+          See this code on github
+        </Button>
       </div>
     </div>
   );

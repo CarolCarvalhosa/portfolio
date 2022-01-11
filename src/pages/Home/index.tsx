@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   return (
     <div className={classes.root}>
       <PersonalInfoCard
-        name={data.name}
+        name={data.fullName}
         avatar={data.avatar}
         occupation={data.occupation}
         education={data.education}

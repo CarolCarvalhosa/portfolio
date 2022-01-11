@@ -16,7 +16,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description, ac
   };
 
   return (
-    <Tooltip title={!active ? 'not available yet' : ''}>
+    <Tooltip title={!active ? 'Not available yet' : ''}>
       <Link
         className={classes.root}
         to={{ pathname: `/portfolio/${id}`, state: { id } }}

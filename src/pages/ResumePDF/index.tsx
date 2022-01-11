@@ -6,24 +6,20 @@ import data from '../../data/data.json';
 const ResumePDF: React.FC = () => {
   const [name, setName] = useState('');
 
-  const getName = () => {
-    const fullName = data.name
+  const getPortfolioShowName = () => {
+    return data.name
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toUpperCase();
-    const fullNameSplit = fullName.split(' ');
-    const firstName = fullNameSplit[0];
-    const lastName = fullNameSplit[fullNameSplit.length - 1];
-    return firstName + ' ' + lastName;
   };
 
   useEffect(() => {
-    setName(getName);
+    setName(getPortfolioShowName);
   }, []);
 
   return (
-    <Document>
-      <Page size="A4" style={styles.page}>
+    <Document title={`${data.name} - Resume`}>
+      <Page size="A4" style={styles.page} orientation="portrait">
         <View style={styles.grayBar}></View>
         <View style={styles.header}>
           <Text style={styles.title}>{name}</Text>
