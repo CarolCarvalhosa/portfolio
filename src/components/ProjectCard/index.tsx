@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
-import { ProjectCardProps } from '../../types/ComponentProps';
+import { ProjectCardProps } from '../../core/types/ComponentProps';
 import { GitHub } from '@material-ui/icons';
 import { ReactComponent as ReactJS } from '../../svgs/reactjs.svg';
 import { ReactComponent as NodeJS } from '../../svgs/nodejs.svg';

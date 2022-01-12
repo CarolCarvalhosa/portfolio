@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useStyles } from './styles';
-import { ReadmeProps } from '../../types/ComponentProps';
+import { ReadmeProps } from '../../core/types/ComponentProps';
 import ReactMarkdown from 'react-markdown';
-import { getReadme } from '../../services/routes/readme.routes';
+import { getReadme } from '../../services/routes/github.routes';
 import { AxiosError } from 'axios';
 import { Button } from '@material-ui/core';
 
 const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
   const classes = useStyles();
 
-  const [rawReadme, setRawReadme] = useState<string>('');
+  const [rawReadme, setRawReadme] = React.useState<string>('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (id) fetchReadme(id);
   }, [id]);
 

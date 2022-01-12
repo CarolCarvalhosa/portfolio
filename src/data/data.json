@@ -1,15 +1,21 @@
 {
   "name": "Carolina Simōes",
   "fullName": "Carolina Carvalhosa Simōes",
+  "mail": "ccscarvalhosa@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/carolina-carvalhosa/",
   "occupation": "Full-Stack Developer",
   "education": "Computer Science Bachelor's Degree Student",
+  "university": "UERJ (State University of Rio de Janeiro)",
+  "educationEndDate": "2022",
+  "summary": "I want to grow as a web and mobile developer, always innovating and acquiring new knowledge that can improve the systems I work on.",
+  "skills": ["JavaScript", "ReactJS", "TypeScript", "Git and TFS", "C# .NET Core", "MVC", "SQL Server, PostgreSQL and MySQL", "NodeJS"],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
-  "github": "CarolCarvalhosa",
+  "github": "carolcarvalhosa",
   "title": "Portfolios",
   "portfolios": [
     {
       "id": "web-mobile-dev",
-      "name": "Web & Mobile Development",
+      "name": "Web & Mobile",
       "description": "Front-end & Back-end development skills",
       "active": true,
       "projects": [
@@ -29,7 +35,7 @@
     },
     {
       "id": "game-dev",
-      "name": "Game Development",
+      "name": "Game",
       "description": "Unity Engine development skills",
       "active": false,
       "projects": []

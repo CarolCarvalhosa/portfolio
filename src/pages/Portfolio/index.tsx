@@ -5,12 +5,13 @@ import { useStyles } from './styles';
 import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
-import { PortfolioData } from '../../types/DataTypes';
+import { PortfolioData, Repository } from '../../core/types/DataTypes';
 import { GetAppRounded } from '@material-ui/icons';
 import { DOWNLOAD_DISABLED_TOOLTIP, DOWNLOAD_TOOLTIP } from '../../helpers/TooltipText';
 import ResumePDF from '../ResumePDF';
 import { Tooltip } from '@material-ui/core';
 import { useLocation } from 'react-router-dom';
+import { getRepositoriesInfo } from '../../services/routes/github.routes';
 
 type LocationParams = {
   id: string;
@@ -21,13 +22,24 @@ const Portfolio: React.FC = () => {
   const location = useLocation<LocationParams>();
 
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   const canDownload = useMemo(() => {
     return portfolio?.projects.length !== 0;
   }, [portfolio]);
 
+  const fetchGithubRepositoriesInfo = async () => {
+    try {
+      const response = await getRepositoriesInfo();
+      setRepositories(response);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   useEffect(() => {
     setPortfolio(data.portfolios.find((portfolio) => portfolio.id === location?.state?.id));
+    fetchGithubRepositoriesInfo();
   }, [location?.state?.id]);
 
   return (
@@ -60,16 +72,18 @@ const Portfolio: React.FC = () => {
           </Tooltip>
         </div>
         <div className={'project-cards-container'}>
-          {portfolio?.projects?.map((project) => (
-            <ProjectCard
-              key={project.id}
-              id={project.id}
-              name={project.name}
-              description={project.description}
-              skills={project.skills}
-              portfolioId={portfolio?.id}
-            />
-          ))}
+          {console.log(portfolio)}
+          {repositories.length > 0 &&
+            portfolio?.projects?.map((project) => (
+              <ProjectCard
+                key={project.id}
+                id={project.id}
+                name={project.name}
+                description={repositories.find((x) => x.name === project.id)?.description}
+                skills={project.skills}
+                portfolioId={portfolio?.id}
+              />
+            ))}
         </div>
       </div>
     </div>

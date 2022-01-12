@@ -16,7 +16,7 @@ export type PortfolioCardProps = {
 export type ProjectCardProps = {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   skills: string[];
   portfolioId: string;
 };

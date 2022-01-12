@@ -4,7 +4,7 @@ import { GitHub } from '@material-ui/icons';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
-import { ProjectData } from '../../types/DataTypes';
+import { ProjectData } from '../../core/types/DataTypes';
 import ReadmeCard from '../../components/ReadmeCard';
 import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import { useLocation } from 'react-router-dom';

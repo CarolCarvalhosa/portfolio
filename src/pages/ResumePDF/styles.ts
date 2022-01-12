@@ -1,4 +1,8 @@
-import { StyleSheet } from '@react-pdf/renderer';
+import { StyleSheet, Font } from '@react-pdf/renderer';
+import ByomIconsSrc from '../../fonts/Byom-Icons.ttf';
+
+// Register font
+Font.register({ family: 'ByomIcons', format: 'truetype', src: ByomIconsSrc });
 
 export const styles = StyleSheet.create({
   // begin global
@@ -77,6 +81,7 @@ export const styles = StyleSheet.create({
   },
   bodyTitleContainer: {
     margin: 'auto',
+    maxWidth: '240px',
   },
   bodyTitle: {
     fontSize: 15,
@@ -92,6 +97,14 @@ export const styles = StyleSheet.create({
     fontSize: 11,
     color: '#484848',
     marginTop: 2,
+  },
+  iconFont: {
+    fontFamily: 'ByomIcons',
+    marginRight: '10px',
+  },
+  textIconDiv: {
+    flex: 1,
+    justifyContent: 'center',
   },
   // end body
 });

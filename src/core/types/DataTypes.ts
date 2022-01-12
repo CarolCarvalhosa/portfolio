@@ -16,3 +16,8 @@ export type ProjectData = {
   description: string;
   skills: string[];
 };
+
+export type Repository = {
+  name: string;
+  description: string;
+};

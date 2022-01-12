@@ -1,5 +1,5 @@
 import React from 'react';
-import { PersonalInfoCardProps } from '../../types/ComponentProps';
+import { PersonalInfoCardProps } from '../../core/types/ComponentProps';
 import { ArrowBack } from '@material-ui/icons';
 import { useStyles } from './styles';
 import { useHistory } from 'react-router-dom';

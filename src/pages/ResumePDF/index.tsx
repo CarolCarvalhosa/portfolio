@@ -24,25 +24,28 @@ const ResumePDF: React.FC = () => {
         <View style={styles.header}>
           <Text style={styles.title}>{name}</Text>
           <Text style={styles.subtitle}>{data.occupation.toUpperCase()}</Text>
-          <Text style={styles.subtitleBold}>CAREER GOALS</Text>
           <View style={styles.lightLine}></View>
-          <Text style={styles.summary}>
-            To use my written communication skills to contribute to an organization that is
-            passionate about timely, accurate and balanced news reporting.
-          </Text>
+          <Text style={styles.summary}>{data.summary}</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.bodyLeft}>
             <View style={styles.bodyTitleContainer}>
               <Text style={styles.bodyTitle}>CONTACT INFO</Text>
               <View style={styles.darkLine}></View>
-              <Text style={styles.bodyText}>Email: ccscarvalhosa@gmail.com</Text>
-              <Text style={styles.bodyText}>https://www.linkedin.com/in/carolina-carvalhosa/</Text>
+              <View style={styles.textIconDiv}>
+                <Text style={styles.iconFont}>M</Text>
+                <Text style={styles.bodyText}>{data.mail}</Text>
+              </View>
+              <Text style={styles.bodyText}>{data.linkedin}</Text>
             </View>
             <View style={styles.bodyTitleContainer}>
               <Text style={styles.bodyTitle}>HARD SKILLS</Text>
               <View style={styles.darkLine}></View>
-              <Text style={styles.bodyText}>- COMPLETE</Text>
+              {data.skills.map((skill, idx) => (
+                <Text key={idx} style={styles.bodyText}>
+                  - {skill}
+                </Text>
+              ))}
             </View>
             <View style={styles.bodyTitleContainer}>
               <Text style={styles.bodyTitle}>SOFT SKILLS</Text>
@@ -66,7 +69,9 @@ const ResumePDF: React.FC = () => {
             <View style={styles.bodyTitleContainer}>
               <Text style={styles.bodyTitle}>MY EDUCATION HISTORY</Text>
               <View style={styles.darkLine}></View>
-              <Text style={styles.bodyText}>- COMPLETE</Text>
+              <Text style={styles.bodyText}>
+                - {data.education} at {data.university} ends in {data.educationEndDate}.
+              </Text>
             </View>
           </View>
         </View>

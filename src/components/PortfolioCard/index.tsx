@@ -2,7 +2,7 @@ import React from 'react';
 import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 import { Web, SportsEsports, Brush } from '@material-ui/icons';
-import { PortfolioCardProps } from '../../types/ComponentProps';
+import { PortfolioCardProps } from '../../core/types/ComponentProps';
 import { Tooltip } from '@material-ui/core';
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description, active }) => {
