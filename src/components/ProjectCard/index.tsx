@@ -27,7 +27,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Link
       className={classes.root}
-      to={{ pathname: `/readme/${portfolioId}/${id}`, state: { id: id, key: portfolioId } }}
+      to={{ pathname: `/readme/${portfolioId}/${id}` }}
+      state={{ id: id, key: portfolioId }}
     >
       <div className={'portfolio-title-container'}>
         <div className={'title-icon-container'}>

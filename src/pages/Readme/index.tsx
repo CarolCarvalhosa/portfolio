@@ -10,13 +10,15 @@ import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import { useLocation } from 'react-router-dom';
 
 type LocationParams = {
-  key: string;
-  id: string;
+  state: {
+    key: string;
+    id: string;
+  };
 };
 
 const Readme: React.FC = () => {
   const classes = useStyles();
-  const location = useLocation<LocationParams>();
+  const location = useLocation() as LocationParams;
 
   const [project, setProject] = useState<ProjectData | undefined>();
 

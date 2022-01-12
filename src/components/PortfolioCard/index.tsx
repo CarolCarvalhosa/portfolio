@@ -19,7 +19,8 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ id, name, description, ac
     <Tooltip title={!active ? 'Not available yet' : ''}>
       <Link
         className={classes.root}
-        to={{ pathname: `/portfolio/${id}`, state: { id } }}
+        to={{ pathname: `/portfolio/${id}` }}
+        state={{ id }}
         // disable link if portfolio is not active
         onClick={(e) => (!active ? e.preventDefault() : null)}
       >

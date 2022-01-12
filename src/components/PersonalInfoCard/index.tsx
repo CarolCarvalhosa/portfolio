@@ -2,7 +2,7 @@ import React from 'react';
 import { PersonalInfoCardProps } from '../../core/types/ComponentProps';
 import { ArrowBack } from '@material-ui/icons';
 import { useStyles } from './styles';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
   name,
@@ -12,12 +12,12 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
   isOnHomePage,
 }) => {
   const classes = useStyles();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div className={classes.root}>
       {!isOnHomePage && (
-        <button className={'arrow-back-btn'} onClick={() => history.goBack()}>
+        <button className={'arrow-back-btn'} onClick={() => navigate(-1)}>
           <ArrowBack className={'arrow-back-icon'} />
         </button>
       )}
