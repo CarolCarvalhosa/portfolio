@@ -33,6 +33,7 @@ const Portfolio: React.FC = () => {
       const response = await getRepositoriesInfo();
       setRepositories(response);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error(e);
     }
   };
@@ -72,7 +73,7 @@ const Portfolio: React.FC = () => {
           </Tooltip>
         </div>
         <div className={'project-cards-container'}>
-          {console.log(portfolio)}
+          {/* {console.log(portfolio)} */}
           {repositories.length > 0 &&
             portfolio?.projects?.map((project) => (
               <ProjectCard
