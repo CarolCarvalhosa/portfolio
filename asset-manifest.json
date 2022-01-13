@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.eba7fb81.css",
-    "main.js": "/portfolio/static/js/main.7a55437c.js",
+    "main.js": "/portfolio/static/js/main.2b1b1bb4.js",
     "static/js/787.86e70ff7.chunk.js": "/portfolio/static/js/787.86e70ff7.chunk.js",
     "static/media/Byom-Icons.ttf": "/portfolio/static/media/Byom-Icons.236c088b14b3989a34ee.ttf",
     "static/media/nodejs.svg": "/portfolio/static/media/nodejs.2acfabc641812ec574fcbeef3e3d02a9.svg",
@@ -9,11 +9,11 @@
     "static/media/ts.svg": "/portfolio/static/media/ts.be44875b0dcd6f9aa6040f8ac2af4147.svg",
     "index.html": "/portfolio/index.html",
     "main.eba7fb81.css.map": "/portfolio/static/css/main.eba7fb81.css.map",
-    "main.7a55437c.js.map": "/portfolio/static/js/main.7a55437c.js.map",
+    "main.2b1b1bb4.js.map": "/portfolio/static/js/main.2b1b1bb4.js.map",
     "787.86e70ff7.chunk.js.map": "/portfolio/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eba7fb81.css",
-    "static/js/main.7a55437c.js"
+    "static/js/main.2b1b1bb4.js"
   ]
 }
