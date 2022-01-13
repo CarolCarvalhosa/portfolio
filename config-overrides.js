@@ -8,6 +8,7 @@ module.exports = function override(config, env) {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
+        process: 'process/browser',
         assert: require.resolve('assert/'),
         util: require.resolve('util/'),
         buffer: require.resolve('buffer/'),
@@ -19,8 +20,21 @@ module.exports = function override(config, env) {
       ...config.plugins,
       new webpack.ProvidePlugin({
         Buffer: ['buffer', 'Buffer'],
+        process: 'process/browser',
       }),
     ],
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.m?js/,
+          resolve: {
+            fullySpecified: false,
+          },
+        },
+      ],
+    },
   };
 
   return {
