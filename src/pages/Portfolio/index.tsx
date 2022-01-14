@@ -75,7 +75,6 @@ const Portfolio: React.FC = () => {
           </Tooltip>
         </div>
         <div className={'project-cards-container'}>
-          {/* {console.log(portfolio)} */}
           {repositories.length > 0 &&
             portfolio?.projects?.map((project) => (
               <ProjectCard
@@ -87,9 +86,6 @@ const Portfolio: React.FC = () => {
                 portfolioId={portfolio?.id}
               />
             ))}
-          <PDFViewer>
-            <ResumePDF />
-          </PDFViewer>
         </div>
       </div>
     </div>
