@@ -111,35 +111,63 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.darkLine} />
               </View>
               <View style={styles.topicDescription}>
-                <Text style={styles.bodyText}>- Software Developer</Text>
-                <Text style={styles.bodyText}>Complete</Text>
-                <Text style={styles.bodyText}>- Developer Intern</Text>
+                <Text style={styles.bodyText}>- Software Developer [08/2020 - now]</Text>
                 <Text style={styles.bodyText}>
-                  Software support and improvements in a project with MVC architecture using C#,
-                  .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum.
+                  * Build a UIKit ReactJS library with documentation using Storybook and tests with
+                  @testing-library which provides DOM APIs, such as Jest and Mocha + JSDOM.
                 </Text>
-                <Text style={styles.bodyText}>- Scientific initiation scholarship</Text>
                 <Text style={styles.bodyText}>
-                  Visualization development using the D3 programming language framework Javascript
-                  and website development support of the group working with HTML, CSS, Jekyll and
-                  Git.
+                  Project summary: The project aimed to provide styled components for screens to be
+                  created more easily and fast.
+                </Text>
+                <Text style={styles.bodyText}>
+                  * Build a project from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and
+                  Scrum.
+                </Text>
+                <Text style={styles.bodyText}>
+                  Project summary: The project aimed to provide a framework which was used as a
+                  starting point in later projects. It consumes the previous ReactJS UIKit.
+                </Text>
+                <Text style={styles.bodyText}>
+                  * Software support and improvements in a project using ReactJS, C# .NET Core, Git,
+                  AzureDevOps and Scrum.
+                </Text>
+                <Text style={styles.bodyText}>
+                  Project summary: The project aimed to show Petroleum tanks data for reports. It
+                  consumed an API to show tank&apos;s levels and triggered notifications depending
+                  on these levels and user groups.
+                </Text>
+                <Text style={styles.bodyText}>- Developer Intern [01/2020 - 08/2020]</Text>
+                <Text style={styles.bodyText}>
+                  * Software support and improvements using MVC architecture using C#, .NET, Entity
+                  Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum.
+                  <Text style={styles.bodyText}>
+                    Project summary: The project aimed to manage trainings and documents for
+                    petroleum platform employees. The system is international and uses replication
+                    to synchronize applications across platforms.
+                  </Text>
+                </Text>
+                <Text style={styles.bodyText}>
+                  - Scientific initiation scholarship [03/2019 - 12/2020]
+                </Text>
+                <Text style={styles.bodyText}>
+                  * Visualization development using the D3.js and website development support
+                  working with HTML, CSS, Jekyll and Git.
                 </Text>
               </View>
             </View>
-            <View style={styles.topicContainer}>
-              <View style={styles.topicContainer}>
-                <View style={styles.topicHeader}>
-                  <View style={styles.iconTextFlex}>
-                    <Image style={styles.icon} source={EducationIcon} />
-                    <Text style={styles.bodyTitle}>EDUCATION HISTORY</Text>
-                  </View>
-                  <View style={styles.darkLine} />
+            <View style={{ ...styles.topicContainer, flex: 0.3 }}>
+              <View style={styles.topicHeader}>
+                <View style={styles.iconTextFlex}>
+                  <Image style={styles.icon} source={EducationIcon} />
+                  <Text style={styles.bodyTitle}>EDUCATION HISTORY</Text>
                 </View>
-                <View style={styles.topicDescription}>
-                  <Text style={styles.bodyText}>
-                    - {data.education} at {data.university} finishes in {data.educationEndDate}.
-                  </Text>
-                </View>
+                <View style={styles.darkLine} />
+              </View>
+              <View style={styles.topicDescription}>
+                <Text style={styles.bodyText}>
+                  - {data.education} at {data.university} finishes in {data.educationEndDate}.
+                </Text>
               </View>
             </View>
           </View>

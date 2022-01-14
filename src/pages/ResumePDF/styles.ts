@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   darkLine: {
     height: '1px',
-    width: '240px',
+    width: '250px',
     margin: 'auto',
     marginTop: 20,
     backgroundColor: '#484848',
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#484848',
     color: 'white',
-    padding: '40 0',
+    padding: '20 0',
   },
   title: {
     fontSize: 40,
@@ -72,7 +72,7 @@ export const styles = StyleSheet.create({
   topicContainer: {
     flex: 1,
     margin: 'auto',
-    maxWidth: '240px',
+    maxWidth: '250px',
   },
   iconTextFlex: {
     flex: 1,
@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
   topicHeader: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 25,
+    marginTop: 15,
     marginBottom: 10,
   },
   bodyTitle: {
