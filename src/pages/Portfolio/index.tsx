@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-// import { RouteComponentProps } from 'react-router-dom';
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
