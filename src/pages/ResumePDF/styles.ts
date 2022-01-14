@@ -24,7 +24,6 @@ export const styles = StyleSheet.create({
     width: '240px',
     margin: 'auto',
     marginTop: 5,
-    marginBottom: 10,
     backgroundColor: '#484848',
   },
   grayBar: {
@@ -55,11 +54,6 @@ export const styles = StyleSheet.create({
     fontWeight: 'normal', // fix
     marginTop: 10,
   },
-  subtitleBold: {
-    fontSize: 15,
-    fontWeight: 'bold', // fix
-    marginTop: 10,
-  },
   summary: {
     fontSize: 10,
     margin: '0 70',
@@ -80,13 +74,35 @@ export const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
   },
   bodyTitleContainer: {
+    flex: 1,
     margin: 'auto',
     maxWidth: '240px',
+  },
+  bodyTitleContainerEnd: {
+    margin: 'auto',
+    maxWidth: '240px',
+    marginBottom: '20px',
+  },
+  bodyTitleContainerFlex: {
+    flex: 1,
+    margin: 'auto',
+    maxWidth: '240px',
+  },
+  iconBodyTitleContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bodyTitleHeader: {
+    flex: 0.3,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginTop: 30,
+    marginBottom: 10,
   },
   bodyTitle: {
     fontSize: 15,
     color: '#484848',
-    marginTop: 30,
   },
   bodySubtitle: {
     fontSize: 14,
@@ -98,13 +114,22 @@ export const styles = StyleSheet.create({
     color: '#484848',
     marginTop: 2,
   },
+  bodyTextWithIcon: {
+    fontSize: 11,
+    color: '#484848',
+  },
   iconFont: {
     fontFamily: 'ByomIcons',
     marginRight: '10px',
   },
   textIconDiv: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  icon: {
+    height: '15px',
+    marginRight: '5px',
   },
   // end body
 });

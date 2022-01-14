@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 // import { RouteComponentProps } from 'react-router-dom';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
@@ -87,6 +87,9 @@ const Portfolio: React.FC = () => {
                 portfolioId={portfolio?.id}
               />
             ))}
+          <PDFViewer>
+            <ResumePDF />
+          </PDFViewer>
         </div>
       </div>
     </div>

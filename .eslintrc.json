@@ -26,7 +26,7 @@
     "spaced-comment": "warn",
     "no-redeclare": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "_" }],
     "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/ban-types": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
