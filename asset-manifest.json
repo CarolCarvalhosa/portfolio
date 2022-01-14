@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.eba7fb81.css",
-    "main.js": "/portfolio/static/js/main.8c879deb.js",
+    "main.js": "/portfolio/static/js/main.42d4275a.js",
     "static/js/787.86e70ff7.chunk.js": "/portfolio/static/js/787.86e70ff7.chunk.js",
     "static/media/Byom-Icons.ttf": "/portfolio/static/media/Byom-Icons.236c088b14b3989a34ee.ttf",
-    "static/media/contact-info.png": "/portfolio/static/media/contact-info.ed6d6a595e4cfc6dd4d5.png",
+    "static/media/soft-skills.png": "/portfolio/static/media/soft-skills.f712e0507734a361529b.png",
     "static/media/nodejs.svg": "/portfolio/static/media/nodejs.c697ca541ef173e90925c0eef579cbb6.svg",
     "static/media/reactjs.svg": "/portfolio/static/media/reactjs.177ba4f9da118d06ac1e57933e23b2e7.svg",
     "static/media/ts.svg": "/portfolio/static/media/ts.be44875b0dcd6f9aa6040f8ac2af4147.svg",
     "index.html": "/portfolio/index.html",
     "main.eba7fb81.css.map": "/portfolio/static/css/main.eba7fb81.css.map",
-    "main.8c879deb.js.map": "/portfolio/static/js/main.8c879deb.js.map",
+    "main.42d4275a.js.map": "/portfolio/static/js/main.42d4275a.js.map",
     "787.86e70ff7.chunk.js.map": "/portfolio/static/js/787.86e70ff7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eba7fb81.css",
-    "static/js/main.8c879deb.js"
+    "static/js/main.42d4275a.js"
   ]
 }
