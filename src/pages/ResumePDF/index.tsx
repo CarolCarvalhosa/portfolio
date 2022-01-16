@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Page, Text, View, Document, Image } from '@react-pdf/renderer';
 import { styles } from './styles';
 import data from '../../data/data.json';
-import LinkedinIcon from '../../assets/pngs/linkedin.png';
 import MailIcon from '../../assets/pngs/mail.png';
+import LinkedinIcon from '../../assets/pngs/linkedin.png';
+import GithubIcon from '../../assets/pngs/github.png';
 import ContactInfoIcon from '../../assets/pngs/contact-info.png';
 import HardSkillsIcon from '../../assets/pngs/hard-skills.png';
 import SoftSkillsIcon from '../../assets/pngs/soft-skills.png';
@@ -36,7 +37,7 @@ const ResumePDF: React.FC = () => {
         </View>
         <View style={styles.body}>
           <View style={styles.bodyLeft}>
-            <View style={{ ...styles.topicContainer, flex: 0.4 }}>
+            <View style={{ ...styles.topicContainer, flex: 0.3 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={ContactInfoIcon} />
@@ -52,6 +53,10 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={LinkedinIcon} />
                   <Text style={styles.bodyText}>{data.linkedin}</Text>
+                </View>
+                <View style={styles.iconTextFlex}>
+                  <Image style={styles.icon} source={GithubIcon} />
+                  <Text style={styles.bodyText}>@{data.github}</Text>
                 </View>
               </View>
             </View>
@@ -71,7 +76,7 @@ const ResumePDF: React.FC = () => {
                 ))}
               </View>
             </View>
-            <View style={styles.topicContainer}>
+            <View style={{ ...styles.topicContainer, flex: 0.8 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={SoftSkillsIcon} />
@@ -80,24 +85,12 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.darkLine} />
               </View>
               <View style={styles.topicDescription}>
-                <Text style={styles.bodyText}>- Fast learner</Text>
-                <Text style={styles.bodyText}>
-                  I love challenges and I used to work on a fast paced environment. Always looking
-                  for external knowledge to increment the solution that I was implementing in the
-                  company.
-                </Text>
-                <Text style={styles.bodyText}>- Team work</Text>
-                <Text style={styles.bodyText}>
-                  I used to work in large and small teams collaboratively and effectively.
-                </Text>
-                <Text style={styles.bodyText}>- Manage tasks</Text>
-                <Text style={styles.bodyText}>
-                  I can take responsibility and manage my tasks effectively.
-                </Text>
-                <Text style={styles.bodyText}>- Share my knowledge</Text>
-                <Text style={styles.bodyText}>
-                  I have didactic skills to share my knowledge with interns and other collaborators.
-                </Text>
+                {data.softSkills.map((skill, idx) => (
+                  <View key={idx}>
+                    <Text style={styles.bodyText}>- {skill.title}</Text>
+                    <Text style={styles.bodyText}>{skill.description}</Text>
+                  </View>
+                ))}
               </View>
             </View>
           </View>
@@ -111,52 +104,19 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.darkLine} />
               </View>
               <View style={styles.topicDescription}>
-                <Text style={styles.bodyText}>- Software Developer [08/2020 - now]</Text>
-                <Text style={styles.bodyText}>
-                  * Build a UIKit ReactJS library with documentation using Storybook and tests with
-                  @testing-library which provides DOM APIs, such as Jest and Mocha + JSDOM.
-                </Text>
-                <Text style={styles.bodyText}>
-                  Project summary: The project aimed to provide styled components for screens to be
-                  created more easily and fast.
-                </Text>
-                <Text style={styles.bodyText}>
-                  * Build a project from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and
-                  Scrum.
-                </Text>
-                <Text style={styles.bodyText}>
-                  Project summary: The project aimed to provide a framework which was used as a
-                  starting point in later projects. It consumes the previous ReactJS UIKit.
-                </Text>
-                <Text style={styles.bodyText}>
-                  * Software support and improvements in a project using ReactJS, C# .NET Core, Git,
-                  AzureDevOps and Scrum.
-                </Text>
-                <Text style={styles.bodyText}>
-                  Project summary: The project aimed to show Petroleum tanks data for reports. It
-                  consumed an API to show tank&apos;s levels and triggered notifications depending
-                  on these levels and user groups.
-                </Text>
-                <Text style={styles.bodyText}>- Developer Intern [01/2020 - 08/2020]</Text>
-                <Text style={styles.bodyText}>
-                  * Software support and improvements using MVC architecture using C#, .NET, Entity
-                  Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum.
-                  <Text style={styles.bodyText}>
-                    Project summary: The project aimed to manage trainings and documents for
-                    petroleum platform employees. The system is international and uses replication
-                    to synchronize applications across platforms.
-                  </Text>
-                </Text>
-                <Text style={styles.bodyText}>
-                  - Scientific initiation scholarship [03/2019 - 12/2020]
-                </Text>
-                <Text style={styles.bodyText}>
-                  * Visualization development using the D3.js and website development support
-                  working with HTML, CSS, Jekyll and Git.
-                </Text>
+                {data.workHistory.map((work, idx) => (
+                  <View key={idx}>
+                    <Text style={styles.bodyTextBold}>{work.occupation + '\n\n'}</Text>
+                    {work.projects.map((project, idx) => (
+                      <Text key={idx} style={styles.bodyTextSmall}>
+                        - {project + '\n\n'}
+                      </Text>
+                    ))}
+                  </View>
+                ))}
               </View>
             </View>
-            <View style={{ ...styles.topicContainer, flex: 0.3 }}>
+            <View style={{ ...styles.topicContainer, flex: 0.2 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={EducationIcon} />
@@ -165,15 +125,18 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.darkLine} />
               </View>
               <View style={styles.topicDescription}>
-                <Text style={styles.bodyText}>
-                  - {data.education} at {data.university} finishes in {data.educationEndDate}.
+                <Text style={styles.bodyTextSmall}>
+                  - {data.education.toUpperCase()} at {data.university} [03/2017 -{' '}
+                  {data.educationEndDate}]
                 </Text>
               </View>
             </View>
           </View>
         </View>
-        <View style={styles.darkBar}></View>
-        <View style={styles.grayBar}></View>
+        <View style={styles.darkBar}>
+          <Text style={styles.bodyTextWhite}>Spoken languages: English and Portuguese</Text>
+        </View>
+        <View style={styles.grayBar} />
       </Page>
     </Document>
   );

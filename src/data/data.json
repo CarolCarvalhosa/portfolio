@@ -1,13 +1,12 @@
 {
-  "name": "Carolina Simōes",
-  "fullName": "Carolina Carvalhosa Simōes",
+  "name": "Carol Carvalhosa",
   "mail": "ccscarvalhosa@gmail.com",
-  "linkedin": "https://www.linkedin.com/in/carolina-carvalhosa/",
+  "linkedin": "https://linkedin.com/in/carolina-carvalhosa/",
   "occupation": "Software Developer",
   "education": "Computer Science Bachelor's Degree Student",
   "university": "UERJ (State University of Rio de Janeiro)",
-  "educationEndDate": "dec/2022",
-  "summary": "I want to grow as a web and mobile developer, always innovating and acquiring new knowledge that can improve the systems I work on.",
+  "educationEndDate": "12/2022",
+  "summary": "I aim to grow as a web & mobile developer acquiring knowledge that can improve the systems I work on.",
   "skills": ["JavaScript", "ReactJS", "TypeScript", "Git and TFS", "C# .NET Core", "MVC", "SQL Server, PostgreSQL and MySQL", "Advanced CSS", "UI/UX", "AzureDevOps and Scrum", "Jest and @testing-library", "Storybook and VS Code documentation"],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
   "github": "carolcarvalhosa",
@@ -46,6 +45,42 @@
       "description": "Illustration, Visual Identity & Draw skills",
       "active": false,
       "projects": []
+    }
+  ],
+  "softSkills": [
+    {
+      "title": "Fast learner",
+      "description": "I love challenges and I'm used to working on fast paced environments. I'm always searching for extra knowledge that can help problem solve."
+    },
+    {
+      "title": "Team player",
+      "description": "I have worked on both big and small team settings collaboratively and effectively."
+    },
+    {
+      "title": "Task Management",
+      "description": "I'm used to taking responsibility and managing my tasks in a timely manner."
+    },
+    {
+      "title": "Helpful Mentor",
+      "description": "I love sharing my knowledge with others and help come up with solutions together."
+    }
+  ],
+  "workHistory": [
+    {
+      "occupation": "SOFTWARE DEVELOPER [08/2020 - present]",
+      "projects": [
+        "Responsible for building an UIKit ReactJS library with Storybook documentation and testing by @testing-library, which provided DOM APIs, such as Jest and Mocha + JSDOM. The Project goal was to provide styled components for screens so that they can be created on a faster and easier way.",
+        "Created projects from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was the creation of o framework that was used as a starting point for later projects. It uses the previous ReactJS UIKit.",
+        "Provided Software support and improvements on projects using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was to gather data on active Petroleum tanks for reports. It consumed an API to show each tank's levels and triggered notifications to certain user groups."
+      ]
+    },
+    {
+      "occupation": "DEVELOPER INTERN [01/2020 - 08/2020]",
+      "projects": ["Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps ond Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."]
+    },
+    {
+      "occupation": "UNIVERSITY SCHOLARSHIP [03/2019 - 12/2020]",
+      "projects": ["Provided visualization development using the D3.js and website development support working with HTML, CSS, Jekyll and Git."]
     }
   ]
 }

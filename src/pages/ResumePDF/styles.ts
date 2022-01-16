@@ -1,4 +1,16 @@
-import { StyleSheet } from '@react-pdf/renderer';
+import { StyleSheet, Font } from '@react-pdf/renderer';
+import InterRegular from '../../fonts/Inter-Regular.ttf';
+import InterBold from '../../fonts/Inter-Bold.ttf';
+
+// Register font
+Font.register({
+  family: 'Inter',
+  format: 'truetype',
+  fonts: [
+    { src: InterRegular, fontStyle: 'normal', fontWeight: 'normal' },
+    { src: InterBold, fontStyle: 'normal', fontWeight: 'bold' },
+  ],
+});
 
 export const styles = StyleSheet.create({
   // begin global
@@ -23,14 +35,16 @@ export const styles = StyleSheet.create({
     backgroundColor: '#484848',
   },
   grayBar: {
-    height: 22,
+    flex: 0.035,
     backgroundColor: '#D9D9D9',
     width: '100%',
   },
   darkBar: {
-    height: 22,
+    flex: 0.035,
     backgroundColor: '#484848',
     width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   // end global
 
@@ -39,7 +53,8 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#484848',
     color: 'white',
-    padding: '20 0',
+    padding: '20 0 15 0',
+    fontFamily: 'Inter',
   },
   title: {
     fontSize: 40,
@@ -47,12 +62,12 @@ export const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 15,
-    fontWeight: 'normal', // fix
+    fontWeight: 'normal',
     marginTop: 10,
   },
   summary: {
-    fontSize: 10,
-    margin: '0 70',
+    fontSize: 12,
+    margin: '0 110',
   },
   // end header
 
@@ -60,9 +75,11 @@ export const styles = StyleSheet.create({
   body: {
     flex: 1,
     flexDirection: 'row',
+    fontFamily: 'Inter',
   },
   bodyLeft: {
     flex: 1,
+    justifyContent: 'space-around',
     backgroundColor: '#FFFFFF',
   },
   bodyRight: {
@@ -80,6 +97,12 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
     maxHeight: '20px',
   },
+  iconTextFlexCenter: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    maxHeight: '20px',
+  },
   topicHeader: {
     flexDirection: 'column',
     justifyContent: 'center',
@@ -87,12 +110,29 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
   bodyTitle: {
-    fontSize: 15,
+    fontSize: 14,
     color: '#484848',
+    fontWeight: 'bold',
   },
   bodyText: {
     fontSize: 11,
     color: '#484848',
+    marginTop: 2,
+  },
+  bodyTextSmall: {
+    fontSize: 9.7,
+    color: '#484848',
+    marginTop: 2,
+  },
+  bodyTextBold: {
+    fontSize: 10,
+    color: '#484848',
+    marginTop: 2,
+    fontWeight: 'bold',
+  },
+  bodyTextWhite: {
+    fontSize: 11,
+    color: '#FFFFFF',
     marginTop: 2,
   },
   icon: {
