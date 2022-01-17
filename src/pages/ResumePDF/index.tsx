@@ -5,6 +5,7 @@ import data from '../../data/data.json';
 import MailIcon from '../../assets/pngs/mail.png';
 import LinkedinIcon from '../../assets/pngs/linkedin.png';
 import GithubIcon from '../../assets/pngs/github.png';
+import LanguageIcon from '../../assets/pngs/language.png';
 import ContactInfoIcon from '../../assets/pngs/contact-info.png';
 import HardSkillsIcon from '../../assets/pngs/hard-skills.png';
 import SoftSkillsIcon from '../../assets/pngs/soft-skills.png';
@@ -15,10 +16,7 @@ const ResumePDF: React.FC = () => {
   const [name, setName] = useState('');
 
   const getPortfolioShowName = () => {
-    return data.name
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toUpperCase();
+    return data.name.toUpperCase();
   };
 
   useEffect(() => {
@@ -37,11 +35,11 @@ const ResumePDF: React.FC = () => {
         </View>
         <View style={styles.body}>
           <View style={styles.bodyLeft}>
-            <View style={{ ...styles.topicContainer, flex: 0.3 }}>
+            <View style={{ ...styles.topicContainer, flex: 0.2 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={ContactInfoIcon} />
-                  <Text style={styles.bodyTitle}>CONTACT INFO</Text>
+                  <Text style={styles.bodyTitle}>INFO</Text>
                 </View>
                 <View style={styles.darkLine} />
               </View>
@@ -58,9 +56,13 @@ const ResumePDF: React.FC = () => {
                   <Image style={styles.icon} source={GithubIcon} />
                   <Text style={styles.bodyText}>@{data.github}</Text>
                 </View>
+                <View style={styles.iconTextFlex}>
+                  <Image style={styles.icon} source={LanguageIcon} />
+                  <Text style={styles.bodyText}>English and Portuguese</Text>
+                </View>
               </View>
             </View>
-            <View style={{ ...styles.topicContainer, flex: 0.7 }}>
+            <View style={{ ...styles.topicContainer, flex: 0.35 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={HardSkillsIcon} />
@@ -76,7 +78,7 @@ const ResumePDF: React.FC = () => {
                 ))}
               </View>
             </View>
-            <View style={{ ...styles.topicContainer, flex: 0.8 }}>
+            <View style={{ ...styles.topicContainer, flex: 0.45 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={SoftSkillsIcon} />
@@ -96,7 +98,7 @@ const ResumePDF: React.FC = () => {
           </View>
           <View style={styles.bodyRight}>
             <View style={styles.topicContainer}>
-              <View style={styles.topicHeader}>
+              <View style={{ ...styles.topicHeader, marginBottom: 5 }}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={WorkHistoryIcon} />
                   <Text style={styles.bodyTitle}>WORK HISTORY</Text>
@@ -105,11 +107,13 @@ const ResumePDF: React.FC = () => {
               </View>
               <View style={styles.topicDescription}>
                 {data.workHistory.map((work, idx) => (
-                  <View key={idx}>
-                    <Text style={styles.bodyTextBold}>{work.occupation + '\n\n'}</Text>
+                  <View key={idx} style={{ marginTop: '10px' }}>
+                    <Text style={{ ...styles.bodyTextBold, marginBottom: '5px' }}>
+                      {work.occupation}
+                    </Text>
                     {work.projects.map((project, idx) => (
-                      <Text key={idx} style={styles.bodyTextSmall}>
-                        - {project + '\n\n'}
+                      <Text key={idx} style={{ ...styles.bodyTextSmall, marginBottom: '5px' }}>
+                        - {project}
                       </Text>
                     ))}
                   </View>
@@ -126,15 +130,17 @@ const ResumePDF: React.FC = () => {
               </View>
               <View style={styles.topicDescription}>
                 <Text style={styles.bodyTextSmall}>
-                  - {data.education.toUpperCase()} at {data.university} [03/2017 -{' '}
-                  {data.educationEndDate}]
+                  <Text style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}>
+                    {data.education.toUpperCase()} AT {data.university}{' '}
+                  </Text>
+                  ({data.universityFullName}) [03/2017 - {data.educationEndDate}]
                 </Text>
               </View>
             </View>
           </View>
         </View>
         <View style={styles.darkBar}>
-          <Text style={styles.bodyTextWhite}>Spoken languages: English and Portuguese</Text>
+          <Text style={styles.bodyTextWhite}>{data.website}</Text>
         </View>
         <View style={styles.grayBar} />
       </Page>

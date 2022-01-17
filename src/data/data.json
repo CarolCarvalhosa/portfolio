@@ -3,12 +3,14 @@
   "mail": "ccscarvalhosa@gmail.com",
   "linkedin": "https://linkedin.com/in/carolina-carvalhosa/",
   "occupation": "Software Developer",
-  "education": "Computer Science Bachelor's Degree Student",
-  "university": "UERJ (State University of Rio de Janeiro)",
+  "education": "Computer Science Bachelor's Degree",
+  "university": "UERJ",
+  "universityFullName": "State University of Rio de Janeiro",
   "educationEndDate": "12/2022",
   "summary": "I aim to grow as a web & mobile developer acquiring knowledge that can improve the systems I work on.",
   "skills": ["JavaScript", "ReactJS", "TypeScript", "Git and TFS", "C# .NET Core", "MVC", "SQL Server, PostgreSQL and MySQL", "Advanced CSS", "UI/UX", "AzureDevOps and Scrum", "Jest and @testing-library", "Storybook and VS Code documentation"],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
+  "website": "https://carolcarvalhosa.github.io/portfolio/",
   "github": "carolcarvalhosa",
   "title": "Portfolios",
   "portfolios": [
@@ -50,7 +52,7 @@
   "softSkills": [
     {
       "title": "Fast learner",
-      "description": "I love challenges and I'm used to working on fast paced environments. I'm always searching for extra knowledge that can help problem solve."
+      "description": "I love challenges and I'm used to working in fast paced environments. I'm always searching for extra knowledge that can help problem solve."
     },
     {
       "title": "Team player",
@@ -62,15 +64,15 @@
     },
     {
       "title": "Helpful Mentor",
-      "description": "I love sharing my knowledge with others and help come up with solutions together."
+      "description": "I love sharing my knowledge and collaborating with others to help come up with solutions."
     }
   ],
   "workHistory": [
     {
       "occupation": "SOFTWARE DEVELOPER [08/2020 - present]",
       "projects": [
-        "Responsible for building an UIKit ReactJS library with Storybook documentation and testing by @testing-library, which provided DOM APIs, such as Jest and Mocha + JSDOM. The Project goal was to provide styled components for screens so that they can be created on a faster and easier way.",
-        "Created projects from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was the creation of o framework that was used as a starting point for later projects. It uses the previous ReactJS UIKit.",
+        "Responsible for building an UIKit ReactJS library with Storybook documentation and testing by @testing-library, which provided DOM APIs, such as Jest and Mocha + JSDOM. The Project goal was to provide styled components for screens so that they \ncan be created on a faster and easier way.",
+        "Created projects from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was the creation of a framework that was used as a starting point for later projects. It uses the previous ReactJS UIKit.",
         "Provided Software support and improvements on projects using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was to gather data on active Petroleum tanks for reports. It consumed an API to show each tank's levels and triggered notifications to certain user groups."
       ]
     },

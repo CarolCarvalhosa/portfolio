@@ -12,6 +12,9 @@ Font.register({
   ],
 });
 
+// Remove hyphenation
+Font.registerHyphenationCallback((word) => [word]);
+
 export const styles = StyleSheet.create({
   // begin global
   page: {
@@ -58,6 +61,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
+    letterSpacing: '2px',
     fontWeight: 'bold',
   },
   subtitle: {
