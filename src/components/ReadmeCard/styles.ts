@@ -92,6 +92,8 @@ export const useStyles = makeStyles<Theme>((theme) => ({
       'marginTop': '3%',
       'padding': '3%',
       'borderRadius': '20px',
+      '-ms-word-break': 'break-word',
+      'word-break': 'break-word',
 
       '& ul': {
         color: 'white',

@@ -21,15 +21,18 @@
       "active": true,
       "projects": [
         {
+          "id": "portfolio",
+          "name": "Portfolio",
+          "skills": ["ReactJS", "TypeScript"]
+        },
+        {
           "id": "go-barber",
           "name": "Go Barber",
-          "description": "Web and mobile app to create and manage ONG cases.",
           "skills": ["ReactJS", "NodeJS", "TypeScript"]
         },
         {
           "id": "be-the-hero",
           "name": "Be The Hero",
-          "description": "Web and mobile app to create and manage appointments for hairdressers.",
           "skills": ["ReactJS", "NodeJS", "Expo"]
         }
       ]
