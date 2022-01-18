@@ -1,12 +1,14 @@
 # Portfolio App - Getting Started
 
+This project aims to create a portfolio app that lists repositories and their readme files.
+
 ## See the application on the web
 
 This project is hosted on `Github Pages` and you can access it through the following URL:
 
 - https://carolcarvalhosa.github.io/portfolio/
 
-## Running the development server locally
+## Running locally
 
 Install all project dependencies:
 
