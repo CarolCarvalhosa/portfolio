@@ -2,12 +2,12 @@
   "name": "Carol Carvalhosa",
   "mail": "ccscarvalhosa@gmail.com",
   "linkedin": "https://linkedin.com/in/carolina-carvalhosa/",
-  "occupation": "Software Developer",
+  "occupation": "Software Engineer",
   "education": "Computer Science Bachelor's Degree",
   "university": "UERJ",
   "universityFullName": "State University of Rio de Janeiro",
   "educationEndDate": "12/2022",
-  "summary": "I aim to grow as a web & mobile developer acquiring knowledge that can improve the systems I work on.",
+  "summary": "I'm a software engineer that thrives in fast-paced environments where I can build great web and mobile products and mentor other engineers too.",
   "skills": ["JavaScript", "ReactJS", "TypeScript", "Git and TFS", "C# .NET Core", "MVC", "SQL Server, PostgreSQL and MySQL", "Advanced CSS", "UI/UX", "AzureDevOps and Scrum", "Jest and @testing-library", "Storybook and VS Code documentation"],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
   "website": "https://carolcarvalhosa.github.io/portfolio/",
@@ -72,7 +72,8 @@
   ],
   "workHistory": [
     {
-      "occupation": "SOFTWARE DEVELOPER [08/2020 - present]",
+      "occupation": "SOFTWARE ENGINEER [08/20 - present]",
+      "place": "Radix",
       "projects": [
         "Responsible for building an UIKit ReactJS library with Storybook documentation and testing by @testing-library, which provided DOM APIs, such as Jest and Mocha + JSDOM. The Project goal was to provide styled components for screens so that they \ncan be created on a faster and easier way.",
         "Created projects from scratch using ReactJS, C# .NET Core, Git, AzureDevOps and Scrum. The Project goal was the creation of a framework that was used as a starting point for later projects. It uses the previous ReactJS UIKit.",
@@ -80,11 +81,13 @@
       ]
     },
     {
-      "occupation": "DEVELOPER INTERN [01/2020 - 08/2020]",
-      "projects": ["Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps ond Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."]
+      "occupation": "DEVELOPER INTERN [01/20 - 08/20]",
+      "place": "Radix",
+      "projects": ["Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."]
     },
     {
-      "occupation": "UNIVERSITY SCHOLARSHIP [03/2019 - 12/2020]",
+      "occupation": "UNIVERSITY SCHOLARSHIP [03/19 - 12/20]",
+      "place": "UERJ",
       "projects": ["Provided visualization development using the D3.js and website development support working with HTML, CSS, Jekyll and Git."]
     }
   ]

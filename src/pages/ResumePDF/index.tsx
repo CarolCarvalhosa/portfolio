@@ -109,7 +109,7 @@ const ResumePDF: React.FC = () => {
                 {data.workHistory.map((work, idx) => (
                   <View key={idx} style={{ marginTop: '10px' }}>
                     <Text style={{ ...styles.bodyTextBold, marginBottom: '5px' }}>
-                      {work.occupation}
+                      {work.occupation} - {work.place}
                     </Text>
                     {work.projects.map((project, idx) => (
                       <Text key={idx} style={{ ...styles.bodyTextSmall, marginBottom: '5px' }}>

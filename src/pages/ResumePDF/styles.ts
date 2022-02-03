@@ -71,7 +71,7 @@ export const styles = StyleSheet.create({
   },
   summary: {
     fontSize: 12,
-    margin: '0 110',
+    margin: '0 70',
   },
   // end header
 
