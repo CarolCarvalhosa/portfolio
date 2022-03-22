@@ -30,7 +30,9 @@ const Readme: React.FC = () => {
     );
   }, [location?.state?.id, location?.state?.key]);
 
-  const handleSeeOnGitHub = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSeeOnGitHub = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     window.open(`https://github.com/${data.github}/${project?.id}`, '_blank');
   };
@@ -47,7 +49,10 @@ const Readme: React.FC = () => {
         <div className="name-and-icon-container">
           <h1>{project?.name}</h1>
           <Tooltip title={GITHUB_TOOLTIP} placement="top">
-            <button className="github-btn" onClick={(e) => handleSeeOnGitHub(e)}>
+            <button
+              className="github-btn"
+              onClick={(e) => handleSeeOnGitHub(e)}
+            >
               <GitHub className="github-icon" />
             </button>
           </Tooltip>

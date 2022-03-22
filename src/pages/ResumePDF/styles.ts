@@ -1,6 +1,8 @@
-import { StyleSheet, Font } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 import InterRegular from '../../fonts/Inter-Regular.ttf';
 import InterBold from '../../fonts/Inter-Bold.ttf';
+
+const { StyleSheet, Font } = ReactPDF;
 
 // Register font
 Font.register({

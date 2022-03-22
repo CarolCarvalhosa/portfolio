@@ -16,18 +16,16 @@ Install all project dependencies:
 
 Run the app in the development mode with:
 
-`yarn start`
+`yarn dev`
 
 Open [http://localhost:3000/portfolio](http://localhost:3000/portfolio) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-## Tests
-
-Launch the test runner in the interactive watch mode with:
-
-`yarn test`
+[//]: # '## Tests'
+[//]: # 'Launch the test runner in the interactive watch mode with:'
+[//]: # '`yarn test`'
 
 ## More Info
 

@@ -1,43 +1,36 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  "plugins": ["@typescript-eslint", "react", "prettier"],
   "extends": [
-    "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "quotes": "off",
-    "array-callback-return": "warn",
+    "indent": ["warn", 2],
+    "linebreak-style": ["warn", "unix"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "always"],
     "no-console": "warn",
+    "array-callback-return": "warn",
     "no-var": "error",
     "prefer-const": "error",
     "spaced-comment": "warn",
-    "no-redeclare": "off",
-    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "_" }],
-    "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/ban-types": "warn",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "warn",
-    "prettier/prettier": "warn",
-    "no-case-declarations": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+    "prettier/prettier": "warn"
   }
 }

@@ -1,16 +1,21 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
 import { PortfolioData, Repository } from '../../core/types/DataTypes';
 import { GetAppRounded } from '@material-ui/icons';
-import { DOWNLOAD_DISABLED_TOOLTIP, DOWNLOAD_TOOLTIP } from '../../helpers/TooltipText';
+import {
+  DOWNLOAD_DISABLED_TOOLTIP,
+  DOWNLOAD_TOOLTIP,
+} from '../../helpers/TooltipText';
 import ResumePDF from '../ResumePDF';
 import { Tooltip } from '@material-ui/core';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
+
+const { PDFDownloadLink } = ReactPDF;
 
 type LocationParams = {
   state: {
@@ -40,7 +45,9 @@ const Portfolio: React.FC = () => {
   };
 
   useEffect(() => {
-    setPortfolio(data.portfolios.find((portfolio) => portfolio.id === location?.state?.id));
+    setPortfolio(
+      data.portfolios.find((portfolio) => portfolio.id === location?.state?.id)
+    );
     fetchGithubRepositoriesInfo();
   }, [location?.state?.id]);
 
@@ -64,7 +71,10 @@ const Portfolio: React.FC = () => {
               className={canDownload ? 'download-btn' : 'download-btn-disabled'}
             >
               {canDownload ? (
-                <PDFDownloadLink document={<ResumePDF />} fileName={`${data.name} - Resume.pdf`}>
+                <PDFDownloadLink
+                  document={<ResumePDF />}
+                  fileName={`${data.name} - Resume.pdf`}
+                >
                   <GetAppRounded className={'download-icon'} />
                 </PDFDownloadLink>
               ) : (
@@ -80,7 +90,9 @@ const Portfolio: React.FC = () => {
                 key={project.id}
                 id={project.id}
                 name={project.name}
-                description={repositories.find((x) => x.name === project.id)?.description}
+                description={
+                  repositories.find((x) => x.name === project.id)?.description
+                }
                 skills={project.skills}
                 portfolioId={portfolio?.id}
               />

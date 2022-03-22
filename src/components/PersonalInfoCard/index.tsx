@@ -21,7 +21,11 @@ const PersonalInfoCard: React.FC<PersonalInfoCardProps> = ({
           <ArrowBack className={'arrow-back-icon'} />
         </button>
       )}
-      <img className={'rounded-picture'} src={avatar} alt="carolina-simoes-linkedin" />
+      <img
+        className={'rounded-picture'}
+        src={avatar}
+        alt="carolina-simoes-linkedin"
+      />
       <h2>{name}</h2>
       <div className={'blue-line'} />
       <h3>{occupation}</h3>

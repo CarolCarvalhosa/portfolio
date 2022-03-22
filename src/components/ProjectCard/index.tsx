@@ -3,9 +3,9 @@ import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 import { ProjectCardProps } from '../../core/types/ComponentProps';
 import { GitHub } from '@material-ui/icons';
-import { ReactComponent as ReactJS } from '../../assets/svgs/reactjs.svg';
-import { ReactComponent as NodeJS } from '../../assets/svgs/nodejs.svg';
-import { ReactComponent as TS } from '../../assets/svgs/ts.svg';
+import ReactJS from '../../assets/svgs/reactjs.svg?component';
+import NodeJS from '../../assets/svgs/nodejs.svg?component';
+import TS from '../../assets/svgs/ts.svg?component';
 import { Tooltip } from '@material-ui/core';
 import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import data from '../../data/data.json';
@@ -19,7 +19,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const classes = useStyles();
 
-  const handleSeeOnGitHub = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSeeOnGitHub = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     window.open('https://github.com/' + data.github + '/' + id, '_blank');
   };
@@ -34,7 +36,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className={'title-icon-container'}>
           <h4>{name}</h4>
           <Tooltip title={GITHUB_TOOLTIP} placement={'top'}>
-            <button className={'github-btn'} onClick={(e) => handleSeeOnGitHub(e)}>
+            <button
+              className={'github-btn'}
+              onClick={(e) => handleSeeOnGitHub(e)}
+            >
               <GitHub className={'github-icon'} />
             </button>
           </Tooltip>

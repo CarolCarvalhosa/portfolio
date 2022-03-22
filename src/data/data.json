@@ -6,9 +6,22 @@
   "education": "Computer Science Bachelor's Degree",
   "university": "UERJ",
   "universityFullName": "State University of Rio de Janeiro",
-  "educationEndDate": "12/2022",
+  "educationEndDate": "09/22",
   "summary": "I'm a software engineer that thrives in fast-paced environments where I can build great web and mobile products and mentor other engineers too.",
-  "skills": ["JavaScript", "ReactJS", "TypeScript", "Git and TFS", "C# .NET Core", "MVC", "SQL Server, PostgreSQL and MySQL", "Advanced CSS", "UI/UX", "AzureDevOps and Scrum", "Jest and @testing-library", "Storybook and VS Code documentation"],
+  "skills": [
+    "JavaScript",
+    "ReactJS",
+    "TypeScript",
+    "Git and TFS",
+    "C# .NET Core",
+    "MVC",
+    "SQL Server, PostgreSQL and MySQL",
+    "Advanced CSS",
+    "UI/UX",
+    "AzureDevOps and Scrum",
+    "Jest and @testing-library",
+    "Storybook and VS Code documentation"
+  ],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
   "website": "https://carolcarvalhosa.github.io/portfolio/",
   "github": "carolcarvalhosa",
@@ -83,12 +96,16 @@
     {
       "occupation": "DEVELOPER INTERN [01/20 - 08/20]",
       "place": "Radix",
-      "projects": ["Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."]
+      "projects": [
+        "Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."
+      ]
     },
     {
       "occupation": "UNIVERSITY SCHOLARSHIP [03/19 - 12/20]",
       "place": "UERJ",
-      "projects": ["Provided visualization development using the D3.js and website development support working with HTML, CSS, Jekyll and Git."]
+      "projects": [
+        "Provided visualization development using the D3.js and website development support working with HTML, CSS, Jekyll and Git."
+      ]
     }
   ]
 }

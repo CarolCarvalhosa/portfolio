@@ -23,5 +23,7 @@ export type ProjectCardProps = {
 
 export type ReadmeProps = {
   id?: string;
-  handleSeeOnGitHub: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  handleSeeOnGitHub: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 };

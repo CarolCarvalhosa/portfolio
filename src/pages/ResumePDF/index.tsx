@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Page, Text, View, Document, Image } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 import { styles } from './styles';
 import data from '../../data/data.json';
 import MailIcon from '../../assets/pngs/mail.png';
@@ -11,6 +11,8 @@ import HardSkillsIcon from '../../assets/pngs/hard-skills.png';
 import SoftSkillsIcon from '../../assets/pngs/soft-skills.png';
 import WorkHistoryIcon from '../../assets/pngs/work-history.png';
 import EducationIcon from '../../assets/pngs/education.png';
+
+const { Page, Text, View, Document, Image } = ReactPDF;
 
 const ResumePDF: React.FC = () => {
   const [name, setName] = useState('');
@@ -108,11 +110,16 @@ const ResumePDF: React.FC = () => {
               <View style={styles.topicDescription}>
                 {data.workHistory.map((work, idx) => (
                   <View key={idx} style={{ marginTop: '10px' }}>
-                    <Text style={{ ...styles.bodyTextBold, marginBottom: '5px' }}>
+                    <Text
+                      style={{ ...styles.bodyTextBold, marginBottom: '5px' }}
+                    >
                       {work.occupation} - {work.place}
                     </Text>
                     {work.projects.map((project, idx) => (
-                      <Text key={idx} style={{ ...styles.bodyTextSmall, marginBottom: '5px' }}>
+                      <Text
+                        key={idx}
+                        style={{ ...styles.bodyTextSmall, marginBottom: '5px' }}
+                      >
                         - {project}
                       </Text>
                     ))}
@@ -133,7 +140,8 @@ const ResumePDF: React.FC = () => {
                   <Text style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}>
                     {data.education.toUpperCase()} AT {data.university}{' '}
                   </Text>
-                  ({data.universityFullName}) [03/2017 - {data.educationEndDate}]
+                  ({data.universityFullName}) [03/2017 - {data.educationEndDate}
+                  ]
                 </Text>
               </View>
             </View>
