@@ -6,6 +6,7 @@ import shimReactPdf from 'vite-plugin-shim-react-pdf';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [svgr(), react(), shimReactPdf()],
   resolve: {
     alias: {
