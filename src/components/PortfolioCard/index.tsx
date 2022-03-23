@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
-import { Web, SportsEsports, Brush } from '@material-ui/icons';
+import { Web, SportsEsports, Brush } from '@mui/icons-material';
 import { PortfolioCardProps } from '../../core/types/ComponentProps';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip } from '@mui/material';
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
   id,

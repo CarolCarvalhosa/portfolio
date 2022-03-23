@@ -2,11 +2,11 @@ import React from 'react';
 import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 import { ProjectCardProps } from '../../core/types/ComponentProps';
-import { GitHub } from '@material-ui/icons';
+import { GitHub } from '@mui/icons-material';
 import ReactJS from '../../assets/svgs/reactjs.svg?component';
 import NodeJS from '../../assets/svgs/nodejs.svg?component';
 import TS from '../../assets/svgs/ts.svg?component';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip } from '@mui/material';
 import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
 import data from '../../data/data.json';
 

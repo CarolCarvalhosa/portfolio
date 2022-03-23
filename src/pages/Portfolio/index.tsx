@@ -5,13 +5,13 @@ import data from '../../data/data.json';
 import ProjectCard from '../../components/ProjectCard';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
 import { PortfolioData, Repository } from '../../core/types/DataTypes';
-import { GetAppRounded } from '@material-ui/icons';
+import { GetAppRounded } from '@mui/icons-material';
 import {
   DOWNLOAD_DISABLED_TOOLTIP,
   DOWNLOAD_TOOLTIP,
 } from '../../helpers/TooltipText';
 import ResumePDF from '../ResumePDF';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
 

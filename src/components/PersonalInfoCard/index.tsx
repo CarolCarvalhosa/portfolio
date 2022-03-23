@@ -1,6 +1,6 @@
 import React from 'react';
 import { PersonalInfoCardProps } from '../../core/types/ComponentProps';
-import { ArrowBack } from '@material-ui/icons';
+import { ArrowBack } from '@mui/icons-material';
 import { useStyles } from './styles';
 import { useNavigate } from 'react-router-dom';
 

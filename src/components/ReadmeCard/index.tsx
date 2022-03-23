@@ -4,7 +4,7 @@ import { ReadmeProps } from '../../core/types/ComponentProps';
 import ReactMarkdown from 'react-markdown';
 import { getReadme } from '../../services/routes/github.routes';
 import { AxiosError } from 'axios';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 
 const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
   const classes = useStyles();

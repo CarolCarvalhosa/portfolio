@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './global.css';
 import App from './App';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { unstable_createMuiStrictModeTheme } from '@material-ui/core';
+import { createTheme, ThemeProvider, unstable_createMuiStrictModeTheme } from '@mui/material/styles';
 
-const createTheme =
+const createAppTheme =
   process.env.NODE_ENV === 'production'
-    ? createMuiTheme
+    ? createTheme
     : unstable_createMuiStrictModeTheme;
-const theme = createTheme({});
+const theme = createAppTheme({});
 
 ReactDOM.render(
   <React.StrictMode>

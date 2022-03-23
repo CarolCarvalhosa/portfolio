@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Tooltip } from '@material-ui/core';
-import { GitHub } from '@material-ui/icons';
+import { Tooltip } from '@mui/material';
+import { GitHub } from '@mui/icons-material';
 import { useStyles } from './styles';
 import data from '../../data/data.json';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
