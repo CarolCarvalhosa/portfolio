@@ -11,7 +11,7 @@ import {
   DOWNLOAD_TOOLTIP,
 } from '../../helpers/TooltipText';
 import ResumePDF from '../ResumePDF';
-import { Tooltip } from '@mui/material';
+import { Tooltip, Skeleton } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
 
@@ -29,6 +29,8 @@ const Portfolio: React.FC = () => {
 
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
   const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [loadingProjectCards, setLoadingProjectCards] = useState<boolean>(true);
+  const loadingProjectCardsSkeletonQuantity = Array.from(new Array(2));
 
   const canDownload = useMemo(() => {
     return portfolio?.projects.length !== 0;
@@ -41,6 +43,8 @@ const Portfolio: React.FC = () => {
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e);
+    } finally {
+      setLoadingProjectCards(false);
     }
   };
 
@@ -84,19 +88,33 @@ const Portfolio: React.FC = () => {
           </Tooltip>
         </div>
         <div className={'project-cards-container'}>
-          {repositories.length > 0 &&
-            portfolio?.projects?.map((project) => (
-              <ProjectCard
-                key={project.id}
-                id={project.id}
-                name={project.name}
-                description={
-                  repositories.find((x) => x.name === project.id)?.description
-                }
-                skills={project.skills}
-                portfolioId={portfolio?.id}
-              />
-            ))}
+          {loadingProjectCards
+            ? loadingProjectCardsSkeletonQuantity.map((skeleton, idx) => (
+                <Skeleton
+                  key={idx}
+                  sx={{
+                    backgroundColor: 'grey.900',
+                    borderRadius: '20px',
+                    marginBottom: '25px',
+                  }}
+                  variant="rectangular"
+                  height="200px"
+                  width="90%"
+                ></Skeleton>
+              ))
+            : repositories.length > 0 &&
+              portfolio?.projects?.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  id={project.id}
+                  name={project.name}
+                  description={
+                    repositories.find((x) => x.name === project.id)?.description
+                  }
+                  skills={project.skills}
+                  portfolioId={portfolio?.id}
+                />
+              ))}
         </div>
       </div>
     </div>
