@@ -3,7 +3,7 @@ import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL ?? 'portfolio'}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes />
     </BrowserRouter>
   );
