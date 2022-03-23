@@ -52,19 +52,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           if (skill.toLowerCase() === 'reactjs')
             return (
               <Tooltip key={skill} title={skill}>
-                <ReactJS className={'icon'} />
+                <span>
+                  <ReactJS className={'icon'} />
+                </span>
               </Tooltip>
             );
           else if (skill.toLowerCase() === 'nodejs')
             return (
               <Tooltip key={skill} title={skill}>
-                <NodeJS className={'icon'} />
+                <span>
+                  <NodeJS className={'icon'} />
+                </span>
               </Tooltip>
             );
           else if (skill.toLowerCase() === 'typescript')
             return (
               <Tooltip key={skill} title={skill}>
-                <TS className={'icon'} />
+                <span>
+                  <TS className={'icon'} />
+                </span>
               </Tooltip>
             );
           else return '';
