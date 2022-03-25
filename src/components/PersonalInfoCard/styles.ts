@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 export const useStyles = makeStyles<CustomTheme>((theme) => ({
   root: {
     'position': 'relative',
+    'height': 'min-content',
     'width': 'min-content',
     'textAlign': 'center',
     'background': theme.palette.background.secondary.enabled,

@@ -6,7 +6,7 @@ This project aims to create a portfolio app that lists repositories and their re
 
 This project is hosted on `Github Pages` and you can access it through the following URL:
 
-- https://carolcarvalhosa.github.io/portfolio/
+- [https://carolcarvalhosa.github.io/portfolio/](https://carolcarvalhosa.github.io/portfolio/)
 
 ## Running locally
 
