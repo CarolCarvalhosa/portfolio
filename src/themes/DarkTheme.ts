@@ -28,12 +28,13 @@ const palette: CustomPalette = {
   },
   pdf: {
     background: {
-      primary: '',
-      secondary: '',
+      primary: '#FFFFFF',
+      secondary: '#D9D9D9',
+      tertiary: '#484848',
     },
     text: {
-      primary: '',
-      secondary: '',
+      primary: '#484848',
+      secondary: '#FFFFFF',
     },
   },
 };

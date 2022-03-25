@@ -18,7 +18,7 @@ Font.register({
 // Remove hyphenation
 Font.registerHyphenationCallback((word) => [word]);
 
-export const PDFStyles = (theme?: CustomTheme) => {
+export const PDFStyles = (theme: CustomTheme) => {
   return StyleSheet.create({
     // begin global
     page: {
@@ -32,23 +32,23 @@ export const PDFStyles = (theme?: CustomTheme) => {
       margin: 'auto',
       marginTop: 10,
       marginBottom: 10,
-      backgroundColor: '#FFFFFF',
+      backgroundColor: theme.palette.pdf.background.primary,
     },
     darkLine: {
       height: '1px',
       width: '250px',
       margin: 'auto',
       marginTop: 20,
-      backgroundColor: '#484848',
+      backgroundColor: theme.palette.pdf.background.tertiary,
     },
     grayBar: {
       flex: 0.035,
-      backgroundColor: '#D9D9D9',
+      backgroundColor: theme.palette.pdf.background.secondary,
       width: '100%',
     },
     darkBar: {
       flex: 0.035,
-      backgroundColor: '#484848',
+      backgroundColor: theme.palette.pdf.background.tertiary,
       width: '100%',
       justifyContent: 'center',
       alignItems: 'center',
@@ -58,8 +58,8 @@ export const PDFStyles = (theme?: CustomTheme) => {
     // begin header
     header: {
       textAlign: 'center',
-      backgroundColor: '#484848',
-      color: 'white',
+      backgroundColor: theme.palette.pdf.background.tertiary,
+      color: theme.palette.pdf.text.secondary,
       padding: '20 0 15 0',
       fontFamily: 'Inter',
     },
@@ -88,11 +88,11 @@ export const PDFStyles = (theme?: CustomTheme) => {
     bodyLeft: {
       flex: 1,
       justifyContent: 'space-around',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: theme.palette.pdf.background.primary,
     },
     bodyRight: {
       flex: 1,
-      backgroundColor: '#D9D9D9',
+      backgroundColor: theme.palette.pdf.background.secondary,
     },
     topicContainer: {
       flex: 1,
@@ -119,28 +119,28 @@ export const PDFStyles = (theme?: CustomTheme) => {
     },
     bodyTitle: {
       fontSize: 14,
-      color: '#484848',
+      color: theme.palette.pdf.text.primary,
       fontWeight: 'bold',
     },
     bodyText: {
       fontSize: 11,
-      color: '#484848',
+      color: theme.palette.pdf.text.primary,
       marginTop: 2,
     },
     bodyTextSmall: {
       fontSize: 9.7,
-      color: '#484848',
+      color: theme.palette.pdf.text.primary,
       marginTop: 2,
     },
     bodyTextBold: {
       fontSize: 10,
-      color: '#484848',
+      color: theme.palette.pdf.text.primary,
       marginTop: 2,
       fontWeight: 'bold',
     },
     bodyTextWhite: {
       fontSize: 11,
-      color: '#FFFFFF',
+      color: theme.palette.pdf.text.secondary,
       marginTop: 2,
     },
     icon: {

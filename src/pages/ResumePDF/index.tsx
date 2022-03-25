@@ -11,11 +11,13 @@ import HardSkillsIcon from '../../assets/pngs/hard-skills.png';
 import SoftSkillsIcon from '../../assets/pngs/soft-skills.png';
 import WorkHistoryIcon from '../../assets/pngs/work-history.png';
 import EducationIcon from '../../assets/pngs/education.png';
+import { CustomTheme, useTheme } from '@mui/material';
 
 const { Page, Text, View, Document, Image } = ReactPDF;
 
 const ResumePDF: React.FC = () => {
-  const styles = PDFStyles();
+  const theme = useTheme<CustomTheme>();
+  const styles = PDFStyles(theme);
   const [name, setName] = useState('');
 
   const getPortfolioShowName = () => {

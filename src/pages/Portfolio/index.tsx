@@ -14,6 +14,7 @@ import ResumePDF from '../ResumePDF';
 import { Tooltip, Skeleton, useTheme, CustomTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
+import { ThemeProvider } from '@mui/styles';
 
 const { PDFDownloadLink } = ReactPDF;
 
@@ -77,7 +78,11 @@ const Portfolio: React.FC = () => {
             >
               {canDownload ? (
                 <PDFDownloadLink
-                  document={<ResumePDF />}
+                  document={
+                    <ThemeProvider theme={theme}>
+                      <ResumePDF />
+                    </ThemeProvider>
+                  }
                   fileName={`${data.name} - Resume.pdf`}
                 >
                   <GetAppRounded className="download-icon" />

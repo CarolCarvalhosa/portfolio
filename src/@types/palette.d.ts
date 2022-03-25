@@ -26,6 +26,7 @@ declare module '@mui/material/styles/createPalette' {
       background: {
         primary: string;
         secondary: string;
+        tertiary: string;
       };
       text: {
         primary: string;
