@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPDF from '@react-pdf/renderer';
-import { styles } from './styles';
+import { PDFStyles } from './styles';
 import data from '../../data/data.json';
 import MailIcon from '../../assets/pngs/mail.png';
 import LinkedinIcon from '../../assets/pngs/linkedin.png';
@@ -15,6 +15,7 @@ import EducationIcon from '../../assets/pngs/education.png';
 const { Page, Text, View, Document, Image } = ReactPDF;
 
 const ResumePDF: React.FC = () => {
+  const styles = PDFStyles();
   const [name, setName] = useState('');
 
   const getPortfolioShowName = () => {

@@ -16,9 +16,9 @@ const Home: React.FC = () => {
         education={data.education}
         isOnHomePage={true}
       />
-      <div className={'portfolios-container'}>
+      <div className="portfolios-container">
         <h1>{data.title}</h1>
-        <div className={'portfolio-cards-container'}>
+        <div className="portfolio-cards-container">
           {data.portfolios.map((portfolio) => (
             <PortfolioCard
               key={portfolio.id}

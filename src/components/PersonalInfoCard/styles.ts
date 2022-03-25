@@ -6,7 +6,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     'position': 'relative',
     'width': 'min-content',
     'textAlign': 'center',
-    'background': '#222222',
+    'background': theme.palette.background.secondary.enabled,
     'padding': '2%',
     'borderRadius': '40px',
     [theme.breakpoints.down('md')]: {
@@ -17,7 +17,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     '& .rounded-picture': {
       width: '250px',
       height: '250px',
-      border: '10px solid #00CED1',
+      border: `10px solid ${theme.palette.highlight}`,
       borderRadius: '50%',
       marginTop: '0.5em',
       [theme.breakpoints.down('md')]: {
@@ -27,7 +27,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     },
 
     '& .blue-line': {
-      background: '#00CED1',
+      background: theme.palette.highlight,
       width: '100%',
       height: '5px',
       borderRadius: '50px',
@@ -43,7 +43,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     },
 
     '& .arrow-back-icon': {
-      color: '#FFFFFF',
+      color: theme.palette.text.primary,
     },
   },
 }));

@@ -6,7 +6,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     'flex': 1,
     'display': 'flex',
     'flexDirection': 'row',
-    'background': '#111111',
+    'background': theme.palette.background.primary,
     'padding': '3%',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
@@ -56,13 +56,13 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     '& .download-icon': {
       width: '45px',
       height: '45px',
-      color: '#00CED1',
+      color: theme.palette.highlight,
     },
 
     '& .download-icon-disabled': {
       width: '45px',
       height: '45px',
-      color: '#9A9A9A',
+      color: theme.palette.disabled,
     },
   },
 }));

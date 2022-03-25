@@ -10,8 +10,8 @@ export const useStyles = makeStyles<Theme, PortfolioCardStyles>((theme) => ({
     'textDecoration': 'none',
     'maxWidth': '35%',
     'textAlign': 'left',
-    'background': '#222222',
-    'border': 'solid 3px #222222',
+    'background': theme.palette.background.secondary.enabled,
+    'border': `solid 3px ${theme.palette.background.secondary.enabled}`,
     'padding': '3%',
     'borderRadius': '30px',
     'marginRight': '3%',
@@ -26,7 +26,7 @@ export const useStyles = makeStyles<Theme, PortfolioCardStyles>((theme) => ({
     },
 
     '&:hover': {
-      border: 'solid 3px #00CED1',
+      border: `solid 3px ${theme.palette.highlight}`,
     },
 
     '& .portfolio-title-container': {
@@ -34,7 +34,7 @@ export const useStyles = makeStyles<Theme, PortfolioCardStyles>((theme) => ({
     },
 
     '& .title-icon': {
-      color: '#00CED1',
+      color: theme.palette.highlight,
       marginRight: '10px',
     },
 
@@ -44,7 +44,7 @@ export const useStyles = makeStyles<Theme, PortfolioCardStyles>((theme) => ({
     },
 
     '& .half-blue-line': {
-      background: '#00CED1',
+      background: theme.palette.highlight,
       width: '50%',
       height: '5px',
       borderRadius: '50px',

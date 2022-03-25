@@ -7,8 +7,9 @@ import ReactJS from '../../assets/svgs/reactjs.svg?component';
 import NodeJS from '../../assets/svgs/nodejs.svg?component';
 import TS from '../../assets/svgs/ts.svg?component';
 import { Tooltip } from '@mui/material';
-import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
+import { GITHUB_TOOLTIP } from '../../core/constants/Tooltips';
 import data from '../../data/data.json';
+import { SKILLS } from '../../core/constants/AppConstants';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
@@ -32,44 +33,44 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       to={{ pathname: `/readme/${portfolioId}/${id}` }}
       state={{ id: id, key: portfolioId }}
     >
-      <div className={'portfolio-title-container'}>
-        <div className={'title-icon-container'}>
+      <div className="portfolio-title-container">
+        <div className="title-icon-container">
           <h4>{name}</h4>
-          <Tooltip title={GITHUB_TOOLTIP} placement={'top'}>
+          <Tooltip title={GITHUB_TOOLTIP} placement="top">
             <button
-              className={'github-btn'}
+              className="github-btn"
               onClick={(e) => handleSeeOnGitHub(e)}
             >
-              <GitHub className={'github-icon'} />
+              <GitHub className="github-icon" />
             </button>
           </Tooltip>
         </div>
-        <div className={'half-blue-line'} />
+        <div className="half-blue-line" />
       </div>
       <p>{description}</p>
-      <div className={'icons-container'}>
+      <div className="icons-container">
         {skills.map((skill) => {
-          if (skill.toLowerCase() === 'reactjs')
+          if (skill.toLowerCase() === SKILLS.REACTJS)
             return (
               <Tooltip key={skill} title={skill}>
                 <span>
-                  <ReactJS className={'icon'} />
+                  <ReactJS className="icon" />
                 </span>
               </Tooltip>
             );
-          else if (skill.toLowerCase() === 'nodejs')
+          else if (skill.toLowerCase() === SKILLS.NODEJS)
             return (
               <Tooltip key={skill} title={skill}>
                 <span>
-                  <NodeJS className={'icon'} />
+                  <NodeJS className="icon" />
                 </span>
               </Tooltip>
             );
-          else if (skill.toLowerCase() === 'typescript')
+          else if (skill.toLowerCase() === SKILLS.TS)
             return (
               <Tooltip key={skill} title={skill}>
                 <span>
-                  <TS className={'icon'} />
+                  <TS className="icon" />
                 </span>
               </Tooltip>
             );

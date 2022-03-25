@@ -7,7 +7,7 @@ export async function getReadme(projectId: string) {
 }
 
 // GET REPOSITORY INFO
-export async function getRepositoriesInfo() {
-  const response = await githubAPI.get(`/users/carolcarvalhosa/repos`);
+export async function getRepositoriesInfo(user: string) {
+  const response = await githubAPI.get(`/users/${user}/repos`);
   return response.data;
 }

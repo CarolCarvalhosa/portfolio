@@ -9,9 +9,9 @@ import { GetAppRounded } from '@mui/icons-material';
 import {
   DOWNLOAD_DISABLED_TOOLTIP,
   DOWNLOAD_TOOLTIP,
-} from '../../helpers/TooltipText';
+} from '../../core/constants/Tooltips';
 import ResumePDF from '../ResumePDF';
-import { Tooltip, Skeleton } from '@mui/material';
+import { Tooltip, Skeleton, useTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
 
@@ -26,6 +26,7 @@ type LocationParams = {
 const Portfolio: React.FC = () => {
   const classes = useStyles();
   const location = useLocation() as LocationParams;
+  const theme = useTheme();
 
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
   const [repositories, setRepositories] = useState<Repository[]>([]);
@@ -38,7 +39,7 @@ const Portfolio: React.FC = () => {
 
   const fetchGithubRepositoriesInfo = async () => {
     try {
-      const response = await getRepositoriesInfo();
+      const response = await getRepositoriesInfo(data.github);
       setRepositories(response);
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -63,12 +64,12 @@ const Portfolio: React.FC = () => {
         occupation={data.occupation}
         education={data.education}
       />
-      <div className={'projects-container'}>
-        <div className={'name-and-icon-container'}>
+      <div className="projects-container">
+        <div className="name-and-icon-container">
           <h1>{portfolio?.name}</h1>
           <Tooltip
             title={canDownload ? DOWNLOAD_TOOLTIP : DOWNLOAD_DISABLED_TOOLTIP}
-            placement={'top'}
+            placement="top"
           >
             <button
               disabled={!canDownload}
@@ -79,21 +80,21 @@ const Portfolio: React.FC = () => {
                   document={<ResumePDF />}
                   fileName={`${data.name} - Resume.pdf`}
                 >
-                  <GetAppRounded className={'download-icon'} />
+                  <GetAppRounded className="download-icon" />
                 </PDFDownloadLink>
               ) : (
-                <GetAppRounded className={'download-icon-disabled'} />
+                <GetAppRounded className="download-icon-disabled" />
               )}
             </button>
           </Tooltip>
         </div>
-        <div className={'project-cards-container'}>
+        <div className="project-cards-container">
           {loadingProjectCards
             ? loadingProjectCardsSkeletonQuantity.map((skeleton, idx) => (
                 <Skeleton
                   key={idx}
                   sx={{
-                    backgroundColor: 'grey.900',
+                    backgroundColor: theme.palette.background.secondary.loading,
                     borderRadius: '20px',
                     marginBottom: '25px',
                   }}

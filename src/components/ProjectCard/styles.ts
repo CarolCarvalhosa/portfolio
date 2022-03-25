@@ -6,8 +6,8 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     'textDecoration': 'none',
     'minWidth': '80%',
     'textAlign': 'left',
-    'background': '#222222',
-    'border': 'solid 3px #222222',
+    'background': theme.palette.background.secondary.enabled,
+    'border': `solid 3px ${theme.palette.background.secondary.enabled}`,
     'padding': '3%',
     'borderRadius': '30px',
     'marginRight': '3%',
@@ -19,7 +19,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     },
 
     '&:hover': {
-      border: 'solid 3px #00CED1',
+      border: `solid 3px ${theme.palette.highlight}`,
     },
 
     '& .title-icon-container': {
@@ -35,11 +35,11 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     },
 
     '& .github-icon': {
-      color: '#00CED1',
+      color: theme.palette.highlight,
     },
 
     '& .github-btn:hover .github-icon': {
-      color: '#FFFFFF',
+      color: theme.palette.text.primary,
     },
 
     '& .portfolio-title-container': {
@@ -47,7 +47,7 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     },
 
     '& .half-blue-line': {
-      background: '#00CED1',
+      background: theme.palette.highlight,
       width: '50%',
       height: '5px',
       borderRadius: '50px',

@@ -6,7 +6,7 @@ import data from '../../data/data.json';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
 import { ProjectData } from '../../core/types/DataTypes';
 import ReadmeCard from '../../components/ReadmeCard';
-import { GITHUB_TOOLTIP } from '../../helpers/TooltipText';
+import { GITHUB_TOOLTIP } from '../../core/constants/Tooltips';
 import { useLocation } from 'react-router-dom';
 
 type LocationParams = {

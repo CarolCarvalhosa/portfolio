@@ -2,17 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './global.css';
 import App from './App';
-import {
-  createTheme,
-  ThemeProvider,
-  unstable_createMuiStrictModeTheme,
-} from '@mui/material/styles';
+import { responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import DarkTheme from './themes/DarkTheme';
 
-const createAppTheme =
-  import.meta.env.NODE_ENV === 'production'
-    ? createTheme
-    : unstable_createMuiStrictModeTheme;
-const theme = createAppTheme({});
+const theme = responsiveFontSizes(DarkTheme);
 
 ReactDOM.render(
   <React.StrictMode>

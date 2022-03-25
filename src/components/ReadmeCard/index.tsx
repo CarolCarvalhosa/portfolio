@@ -34,13 +34,13 @@ const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
 
   return (
     <div className={classes.root}>
-      <div className={'portfolio-title-container'}>
-        <div className={'title-icon-container'}>
+      <div className="portfolio-title-container">
+        <div className="title-icon-container">
           <h4>README.md</h4>
         </div>
-        <div className={'half-blue-line'} />
+        <div className="half-blue-line" />
       </div>
-      <div className={'readme-container'}>
+      <div className="readme-container">
         <ReactMarkdown>{rawReadme}</ReactMarkdown>
       </div>
       <div className="github-readme-btn-container">
