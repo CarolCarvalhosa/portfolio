@@ -1,7 +1,7 @@
-import { Theme } from '@mui/material/styles';
+import { CustomTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles<Theme>((theme) => ({
+export const useStyles = makeStyles<CustomTheme>((theme) => ({
   root: {
     'textDecoration': 'none',
     'minWidth': '80%',

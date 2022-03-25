@@ -1,7 +1,7 @@
 import ReactPDF from '@react-pdf/renderer';
 import InterRegular from '../../fonts/Inter-Regular.ttf';
 import InterBold from '../../fonts/Inter-Bold.ttf';
-import { Theme } from '@mui/material/styles';
+import { CustomTheme } from '@mui/material';
 
 const { StyleSheet, Font } = ReactPDF;
 
@@ -18,7 +18,7 @@ Font.register({
 // Remove hyphenation
 Font.registerHyphenationCallback((word) => [word]);
 
-export const PDFStyles = (theme?: Theme) => {
+export const PDFStyles = (theme?: CustomTheme) => {
   return StyleSheet.create({
     // begin global
     page: {

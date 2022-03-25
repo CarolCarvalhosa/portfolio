@@ -33,7 +33,4 @@ declare module '@mui/material/styles/createPalette' {
       };
     };
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  export interface Palette extends CustomPalette {}
 }

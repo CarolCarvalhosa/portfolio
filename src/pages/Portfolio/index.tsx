@@ -11,7 +11,7 @@ import {
   DOWNLOAD_TOOLTIP,
 } from '../../core/constants/Tooltips';
 import ResumePDF from '../ResumePDF';
-import { Tooltip, Skeleton, useTheme } from '@mui/material';
+import { Tooltip, Skeleton, useTheme, CustomTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
 
@@ -26,7 +26,7 @@ type LocationParams = {
 const Portfolio: React.FC = () => {
   const classes = useStyles();
   const location = useLocation() as LocationParams;
-  const theme = useTheme();
+  const theme = useTheme<CustomTheme>();
 
   const [portfolio, setPortfolio] = useState<PortfolioData | undefined>();
   const [repositories, setRepositories] = useState<Repository[]>([]);
