@@ -1,11 +1,11 @@
 import '../@types/palette.d.ts';
 import '../@types/theme.d.ts';
-import { CustomThemeOptions } from '@mui/material';
+import { CustomThemeOptions, PaletteMode } from '@mui/material';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
-import { CustomPalette } from '@mui/material/styles/createPalette';
+import { typography } from './core/typography';
 
-const palette: CustomPalette = {
-  mode: 'dark',
+export const palette = {
+  mode: 'dark' as PaletteMode,
   background: {
     primary: '#111111',
     secondary: {
@@ -16,13 +16,13 @@ const palette: CustomPalette = {
   },
   text: {
     primary: '#FFFFFF',
-    highlight: '#00CED1',
+    highlight: '#735aab',
   },
-  highlight: '#00CED1',
+  highlight: '#735aab',
   disabled: '#9A9A9A',
   button: {
     primary: {
-      background: '#00CED1',
+      background: '#735aab',
       text: '#333333',
     },
   },
@@ -43,6 +43,7 @@ const theme: CustomThemeOptions = {
   palette: {
     ...palette,
   },
+  typography: typography,
 };
 
 export default createTheme(theme as ThemeOptions);

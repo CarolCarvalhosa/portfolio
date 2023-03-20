@@ -4,10 +4,11 @@ import { ReadmeProps } from '../../core/types/ComponentProps';
 import ReactMarkdown from 'react-markdown';
 import { getReadme } from '../../services/routes/github.routes';
 import { AxiosError } from 'axios';
-import { Button } from '@mui/material';
+import { Button, CircularProgress, CustomTheme, useTheme } from '@mui/material';
 
 const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
   const classes = useStyles();
+  const theme = useTheme<CustomTheme>();
 
   const [rawReadme, setRawReadme] = React.useState<string>('');
 
@@ -25,6 +26,7 @@ const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
       if (error?.response?.status === 404) {
         // eslint-disable-next-line no-console
         console.error('Readme data was not found for this repository.');
+        setRawReadme('Readme not found :(');
       } else {
         // eslint-disable-next-line no-console
         console.error('Unable to load readme data:', error?.response?.data);
@@ -41,7 +43,19 @@ const ReadmeCard: React.FC<ReadmeProps> = ({ id, handleSeeOnGitHub }) => {
         <div className="half-blue-line" />
       </div>
       <div className="readme-container">
-        <ReactMarkdown>{rawReadme}</ReactMarkdown>
+        {rawReadme ? (
+          <ReactMarkdown>{rawReadme}</ReactMarkdown>
+        ) : (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <CircularProgress
+              size={'2rem'}
+              sx={{
+                color: theme.palette.highlight,
+                marginLeft: '15px',
+              }}
+            />
+          </div>
+        )}
       </div>
       <div className="github-readme-btn-container">
         <Button

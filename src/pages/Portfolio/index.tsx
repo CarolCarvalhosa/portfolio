@@ -15,6 +15,7 @@ import { Tooltip, Skeleton, useTheme, CustomTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { getRepositoriesInfo } from '../../services/routes/github.routes';
 import { ThemeProvider } from '@mui/styles';
+import { PageTitle } from '../../components/common/PageTitle';
 
 const { PDFDownloadLink } = ReactPDF;
 
@@ -67,7 +68,7 @@ const Portfolio: React.FC = () => {
       />
       <div className="projects-container">
         <div className="name-and-icon-container">
-          <h1>{portfolio?.name}</h1>
+          <PageTitle label={portfolio?.name} />
           <Tooltip
             title={canDownload ? DOWNLOAD_TOOLTIP : DOWNLOAD_DISABLED_TOOLTIP}
             placement="top"

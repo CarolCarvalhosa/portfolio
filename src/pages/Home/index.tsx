@@ -3,6 +3,7 @@ import { useStyles } from './styles';
 import data from '../../data/data.json';
 import PortfolioCard from '../../components/PortfolioCard';
 import PersonalInfoCard from '../../components/PersonalInfoCard';
+import { PageTitle } from '../../components/common/PageTitle';
 
 const Home: React.FC = () => {
   const classes = useStyles();
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
         isOnHomePage={true}
       />
       <div className="portfolios-container">
-        <h1>{data.title}</h1>
+        <PageTitle label={data.title} />
         <div className="portfolio-cards-container">
           {data.portfolios.map((portfolio) => (
             <PortfolioCard

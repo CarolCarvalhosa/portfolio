@@ -16,7 +16,7 @@ Install all project dependencies:
 
 Run the app in the development mode with:
 
-`yarn dev`
+`yarn start`
 
 Open [http://localhost:3000/portfolio](http://localhost:3000/portfolio) to view it in the browser.
 
