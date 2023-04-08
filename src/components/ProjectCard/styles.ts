@@ -46,16 +46,16 @@ export const useStyles = makeStyles<CustomTheme>((theme) => ({
       width: 'max-content',
     },
 
-    '& .half-blue-line': {
+    '& .half-line': {
       background: theme.palette.highlight,
       width: '50%',
       height: '5px',
       borderRadius: '50px',
-      transition: 'all .2s ease-in-out',
+      transition: 'width .2s ease-in-out',
     },
 
-    '&:hover .half-blue-line': {
-      transform: 'scale(1.1, 1)',
+    '&:hover .half-line': {
+      width: '98%',
     },
 
     '& .icons-container': {
@@ -65,7 +65,8 @@ export const useStyles = makeStyles<CustomTheme>((theme) => ({
 
     '& .icon': {
       marginRight: '5px',
-      height: '40px',
+      height: '30px',
+      width: '30px',
     },
   },
 }));

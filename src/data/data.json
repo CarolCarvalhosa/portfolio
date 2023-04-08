@@ -34,6 +34,11 @@
       "active": true,
       "projects": [
         {
+          "id": "equipment-management-sys",
+          "name": "Equipment Management",
+          "skills": ["ReactJS", "TypeScript", "NodeJS", "RabbitMQ"]
+        },
+        {
           "id": "portfolio",
           "name": "Portfolio",
           "skills": ["ReactJS", "TypeScript"]
