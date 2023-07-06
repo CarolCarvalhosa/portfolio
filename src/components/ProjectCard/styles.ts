@@ -44,6 +44,18 @@ export const useStyles = makeStyles<CustomTheme>((theme) => ({
 
     '& .portfolio-title-container': {
       width: 'max-content',
+
+      [theme.breakpoints.down('md')]: {
+        '& .text-max-size': {
+          width: '50vw',
+          whiteSpace: 'nowrap',
+        },
+
+        '& .overflow-ellipsis, .text-max-size': {
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        },
+      },
     },
 
     '& .half-line': {

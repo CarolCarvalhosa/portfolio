@@ -32,7 +32,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <div className="portfolio-title-container">
         <div className="title-icon-container">
-          <h4>{name}</h4>
+          <div className="text-max-size">
+            <h4 className="overflow-ellipsis">{name}</h4>
+          </div>
           <Tooltip title={GITHUB_TOOLTIP} placement="top">
             <button
               className="github-btn"
