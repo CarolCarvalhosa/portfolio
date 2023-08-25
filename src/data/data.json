@@ -6,25 +6,27 @@
   "education": "Computer Science Bachelor's Degree",
   "university": "UERJ",
   "universityFullName": "State University of Rio de Janeiro",
-  "educationEndDate": "08/23",
+  "educationEndDate": "09/23",
   "summary": "I'm a software engineer that thrives in fast-paced environments where I can build great web and mobile products and mentor other engineers too.",
   "skills": [
-    "JavaScript",
     "ReactJS",
     "TypeScript",
-    "Git and TFS",
-    "C# .NET Core",
-    "MVC",
-    "SQL Server, PostgreSQL and MySQL",
     "Advanced CSS",
+    "C# .NET Core",
+    "Git and TFS",
+    "SQL Server, PostgreSQL and MySQL",
+    "MVC",
     "UI/UX",
+    "JavaScript",
     "AzureDevOps and Scrum",
     "Jest and @testing-library",
-    "Storybook and VS Code documentation"
+    "Storybook and VS Code documentation",
+    "AWS"
   ],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
   "website": "https://carolcarvalhosa.github.io/portfolio/",
   "github": "carolcarvalhosa",
+  "githubLink": "https://github.com/CarolCarvalhosa",
   "title": "Portfolios",
   "portfolios": [
     {
@@ -93,6 +95,8 @@
       "occupation": "SOFTWARE CONSULTANT [05/23 - present]",
       "place": "Deloitte",
       "projects": [
+        "Created AWS infrastructure for a CFD (Computer Fluid Dynamics) project that included creation of an HPC cluster and a Windows EC2 with a VPN.",
+        "Provided Software support and improvements on a serverless project using ReactJS, NodeJS, Git, AzureDevOps and Scrum. The Project was in its initial phase and it was evolving into a e-commerce."
       ]
     },
     {
@@ -110,12 +114,29 @@
       "projects": [
         "Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."
       ]
-    },
+    }
+  ],
+  "educationHistory": [
     {
       "occupation": "UNIVERSITY SCHOLARSHIP [03/19 - 12/20]",
       "place": "UERJ",
       "projects": [
         "Provided visualization development using the D3.js and website development support working with HTML, CSS, Jekyll and Git."
+      ]
+    },
+    {
+      "occupation": "ENGLISH CERTIFICATE [11/18]",
+      "place": "WISE UP",
+      "projects": [
+        "Advanced english level."
+      ]
+    }
+  ],
+  "codeContributions": [
+    {
+      "occupation": "GITLAB [01/20 - 06/20]",
+      "projects": [
+        "Provided small front-end contributions to the open source project https://gitlab.com/gitlab-org/gitlab."
       ]
     }
   ]

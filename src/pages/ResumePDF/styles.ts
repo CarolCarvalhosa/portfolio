@@ -151,6 +151,9 @@ export const PDFStyles = (theme: CustomTheme) => {
       flex: 1,
       flexDirection: 'column',
     },
+    link: {
+      textDecoration: 'none',
+    },
     // end body
   });
 };

@@ -13,7 +13,7 @@ import WorkHistoryIcon from '../../assets/pngs/work-history.png';
 import EducationIcon from '../../assets/pngs/education.png';
 import { CustomTheme, useTheme } from '@mui/material';
 
-const { Page, Text, View, Document, Image } = ReactPDF;
+const { Page, Text, View, Document, Image, Link } = ReactPDF;
 
 const ResumePDF: React.FC = () => {
   const theme = useTheme<CustomTheme>();
@@ -59,7 +59,9 @@ const ResumePDF: React.FC = () => {
                 </View>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={GithubIcon} />
-                  <Text style={styles.bodyText}>@{data.github}</Text>
+                  <Link style={styles.link} src={data.githubLink}>
+                    <Text style={styles.bodyText}>@{data.github}</Text>
+                  </Link>
                 </View>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={LanguageIcon} />
@@ -102,7 +104,7 @@ const ResumePDF: React.FC = () => {
             </View>
           </View>
           <View style={styles.bodyRight}>
-            <View style={styles.topicContainer}>
+            <View style={{ ...styles.topicContainer, flex: 1 }}>
               <View style={{ ...styles.topicHeader, marginBottom: 5 }}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={WorkHistoryIcon} />
@@ -121,7 +123,10 @@ const ResumePDF: React.FC = () => {
                     {work.projects.map((project, idx) => (
                       <Text
                         key={idx}
-                        style={{ ...styles.bodyTextSmall, marginBottom: '5px' }}
+                        style={{
+                          ...styles.bodyTextSmall,
+                          marginBottom: '5px',
+                        }}
                       >
                         - {project}
                       </Text>
@@ -130,7 +135,57 @@ const ResumePDF: React.FC = () => {
                 ))}
               </View>
             </View>
-            <View style={{ ...styles.topicContainer, flex: 0.2 }}>
+          </View>
+        </View>
+        <View style={styles.darkBar}>
+          <Text style={styles.bodyTextWhite}>{data.website}</Text>
+        </View>
+        <View style={styles.grayBar} />
+      </Page>
+      <Page size="A4" style={styles.page} orientation="portrait">
+        <View style={styles.grayBar} />
+        <View style={styles.darkBar}>
+          <Text style={styles.bodyTextWhite}>{data.website}</Text>
+        </View>
+        <View style={styles.body}>
+          <View style={styles.bodyLeft}>
+            <View style={styles.topicContainer}>
+              <View style={styles.topicHeader}>
+                <View style={styles.iconTextFlex}>
+                  <Image style={styles.icon} source={HardSkillsIcon} />
+                  <Text style={styles.bodyTitle}>CODE CONTRIBUTIONS</Text>
+                </View>
+                <View style={styles.darkLine} />
+              </View>
+              <View style={styles.topicDescription}>
+                {data.codeContributions.map((contribution, idx) => (
+                  <View key={idx} style={{ marginTop: '10px' }}>
+                    <Text
+                      style={{
+                        ...styles.bodyTextBold,
+                        marginBottom: '5px',
+                      }}
+                    >
+                      {contribution.occupation}
+                    </Text>
+                    {contribution.projects.map((project, idx) => (
+                      <Text
+                        key={idx}
+                        style={{
+                          ...styles.bodyTextSmall,
+                          marginBottom: '5px',
+                        }}
+                      >
+                        - {project}
+                      </Text>
+                    ))}
+                  </View>
+                ))}
+              </View>
+            </View>
+          </View>
+          <View style={styles.bodyRight}>
+            <View style={styles.topicContainer}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={EducationIcon} />
@@ -138,14 +193,36 @@ const ResumePDF: React.FC = () => {
                 </View>
                 <View style={styles.darkLine} />
               </View>
-              <View style={styles.topicDescription}>
-                <Text style={styles.bodyTextSmall}>
-                  <Text style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}>
-                    {data.education.toUpperCase()} AT {data.university}{' '}
-                  </Text>
-                  ({data.universityFullName}) [03/2017 - {data.educationEndDate}
-                  ]
+              <Text style={styles.bodyTextSmall}>
+                <Text style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}>
+                  {data.education.toUpperCase()} AT {data.university}{' '}
                 </Text>
+                ({data.universityFullName}) [03/2017 - {data.educationEndDate}]
+              </Text>
+              <View style={styles.topicDescription}>
+                {data.educationHistory.map((education, idx) => (
+                  <View key={idx} style={{ marginTop: '10px' }}>
+                    <Text
+                      style={{
+                        ...styles.bodyTextBold,
+                        marginBottom: '5px',
+                      }}
+                    >
+                      {education.occupation} - {education.place}
+                    </Text>
+                    {education.projects.map((project, idx) => (
+                      <Text
+                        key={idx}
+                        style={{
+                          ...styles.bodyTextSmall,
+                          marginBottom: '5px',
+                        }}
+                      >
+                        - {project}
+                      </Text>
+                    ))}
+                  </View>
+                ))}
               </View>
             </View>
           </View>
