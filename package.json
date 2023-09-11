@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "author": "Carol Carvalhosa <ccscarvalhosa@gmail.com>",
-  "homepage": "https://carolcarvalhosa.github.io/portfolio",
+  "homepage": "https://carolcarvalhosa.github.io/",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "lint": "prettier --write .",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -39,6 +39,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "gh-pages": "^6.0.0",
     "prettier": "^2.6.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
