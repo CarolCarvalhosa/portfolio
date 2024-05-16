@@ -113,26 +113,32 @@ const ResumePDF: React.FC = () => {
                 <View style={styles.darkLine} />
               </View>
               <View style={styles.topicDescription}>
-                {data.workHistory.map((work, idx) => (
-                  <View key={idx} style={{ marginTop: '10px' }}>
-                    <Text
-                      style={{ ...styles.bodyTextBold, marginBottom: '5px' }}
-                    >
-                      {work.occupation} - {work.place}
-                    </Text>
-                    {work.projects.map((project, idx) => (
-                      <Text
-                        key={idx}
-                        style={{
-                          ...styles.bodyTextSmall,
-                          marginBottom: '5px',
-                        }}
-                      >
-                        - {project}
-                      </Text>
-                    ))}
-                  </View>
-                ))}
+                {data.workHistory.map(
+                  (work, idx) =>
+                    idx <= 1 && (
+                      <View key={idx} style={{ marginTop: '5px' }}>
+                        <Text
+                          style={{
+                            ...styles.bodyTextBold,
+                            marginBottom: '5px',
+                          }}
+                        >
+                          {work.occupation} - {work.place}
+                        </Text>
+                        {work.projects.map((project, idx) => (
+                          <Text
+                            key={idx}
+                            style={{
+                              ...styles.bodyTextSmall,
+                              marginBottom: '5px',
+                            }}
+                          >
+                            - {project}
+                          </Text>
+                        ))}
+                      </View>
+                    )
+                )}
               </View>
             </View>
           </View>
@@ -149,7 +155,7 @@ const ResumePDF: React.FC = () => {
         </View>
         <View style={styles.body}>
           <View style={styles.bodyLeft}>
-            <View style={styles.topicContainer}>
+            <View style={{ ...styles.topicContainer, flex: 0.13 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={HardSkillsIcon} />
@@ -159,7 +165,7 @@ const ResumePDF: React.FC = () => {
               </View>
               <View style={styles.topicDescription}>
                 {data.codeContributions.map((contribution, idx) => (
-                  <View key={idx} style={{ marginTop: '10px' }}>
+                  <View key={idx}>
                     <Text
                       style={{
                         ...styles.bodyTextBold,
@@ -183,9 +189,8 @@ const ResumePDF: React.FC = () => {
                 ))}
               </View>
             </View>
-          </View>
-          <View style={styles.bodyRight}>
-            <View style={styles.topicContainer}>
+
+            <View style={{ ...styles.topicContainer, flex: 0.87 }}>
               <View style={styles.topicHeader}>
                 <View style={styles.iconTextFlex}>
                   <Image style={styles.icon} source={EducationIcon} />
@@ -193,13 +198,20 @@ const ResumePDF: React.FC = () => {
                 </View>
                 <View style={styles.darkLine} />
               </View>
-              <Text style={styles.bodyTextSmall}>
-                <Text style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}>
-                  {data.education.toUpperCase()} AT {data.university}{' '}
-                </Text>
-                ({data.universityFullName}) [03/2017 - {data.educationEndDate}]
-              </Text>
+
               <View style={styles.topicDescription}>
+                <View>
+                  <Text style={styles.bodyTextSmall}>
+                    <Text
+                      style={{ ...styles.bodyTextSmall, fontWeight: 'bold' }}
+                    >
+                      {data.education.toUpperCase()} AT {data.university}{' '}
+                    </Text>
+                    ({data.universityFullName}) [03/2017 -{' '}
+                    {data.educationEndDate}]
+                  </Text>
+                </View>
+
                 {data.educationHistory.map((education, idx) => (
                   <View key={idx} style={{ marginTop: '10px' }}>
                     <Text
@@ -223,6 +235,38 @@ const ResumePDF: React.FC = () => {
                     ))}
                   </View>
                 ))}
+              </View>
+            </View>
+          </View>
+          <View style={styles.bodyRight}>
+            <View style={styles.topicContainer}>
+              <View style={styles.topicDescription}>
+                {data.workHistory.map(
+                  (work, idx) =>
+                    idx > 1 && (
+                      <View key={idx} style={{ marginTop: '10px' }}>
+                        <Text
+                          style={{
+                            ...styles.bodyTextBold,
+                            marginBottom: '5px',
+                          }}
+                        >
+                          {work.occupation} - {work.place}
+                        </Text>
+                        {work.projects.map((project, idx) => (
+                          <Text
+                            key={idx}
+                            style={{
+                              ...styles.bodyTextSmall,
+                              marginBottom: '5px',
+                            }}
+                          >
+                            - {project}
+                          </Text>
+                        ))}
+                      </View>
+                    )
+                )}
               </View>
             </View>
           </View>

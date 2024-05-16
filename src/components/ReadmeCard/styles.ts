@@ -96,7 +96,7 @@ export const useStyles = makeStyles<CustomTheme>((theme) => ({
       '-ms-word-break': 'break-word',
       'word-break': 'break-word',
 
-      '& ul': {
+      '& ul, .language-bash, .language-json': {
         color: theme.palette.text.primary,
       },
     },

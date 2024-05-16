@@ -87,16 +87,17 @@ export const PDFStyles = (theme: CustomTheme) => {
     },
     bodyLeft: {
       flex: 1,
-      justifyContent: 'space-around',
+      justifyContent: 'flex-start',
       backgroundColor: theme.palette.pdf.background.primary,
     },
     bodyRight: {
       flex: 1,
+      justifyContent: 'flex-start',
       backgroundColor: theme.palette.pdf.background.secondary,
     },
     topicContainer: {
       flex: 1,
-      margin: 'auto',
+      margin: '0 auto',
       maxWidth: '250px',
     },
     iconTextFlex: {
@@ -123,7 +124,7 @@ export const PDFStyles = (theme: CustomTheme) => {
       fontWeight: 'bold',
     },
     bodyText: {
-      fontSize: 11,
+      fontSize: 10,
       color: theme.palette.pdf.text.primary,
       marginTop: 2,
     },

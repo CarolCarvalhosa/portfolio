@@ -6,16 +6,17 @@
   "education": "Computer Science Bachelor's Degree",
   "university": "UERJ",
   "universityFullName": "State University of Rio de Janeiro",
-  "educationEndDate": "09/23",
+  "educationEndDate": "11/23",
   "summary": "I'm a software engineer that thrives in fast-paced environments where I can build great web and mobile products and mentor other engineers too.",
   "skills": [
     "ReactJS",
     "TypeScript",
     "Advanced CSS",
-    "C# .NET Core",
+    "C# .NET Core, .NET Framework",
     "Git and TFS",
     "SQL Server, PostgreSQL and MySQL",
     "MVC",
+    "Docker, Podman",
     "UI/UX",
     "JavaScript",
     "AzureDevOps and Scrum",
@@ -83,7 +84,7 @@
     },
     {
       "title": "Task Management",
-      "description": "I'm used to taking responsibility and managing my tasks in a timely manner."
+      "description": "I'm used to taking responsibility and managing my tasks in a timely manner. I'm used to working on more than one team at the same time"
     },
     {
       "title": "Helpful Mentor",
@@ -96,7 +97,8 @@
       "place": "Deloitte",
       "projects": [
         "Created AWS infrastructure for a CFD (Computer Fluid Dynamics) project that included creation of an HPC cluster and a Windows EC2 with a VPN.",
-        "Provided Software support and improvements on a serverless project using ReactJS, NodeJS, Git, AzureDevOps and Scrum. The Project was in its initial phase and it was evolving into a e-commerce."
+        "Provided Software support and improvements on a serverless project using ReactJS, NodeJS, Git, AzureDevOps and Scrum. The Project was evolving into a e-commerce. I refactored the legacy structure and integrated some new features. In addition, I maintained the on-premise servers and created a containerized infrastructure for the applications using Docker.",
+        "Built a ReactJS front-end and a Python FastAPI with AI models integration. The Project goal was to create a chatbot to help professionals to make strategic decisions quickly based on company data analysis."
       ]
     },
     {
@@ -118,6 +120,11 @@
   ],
   "educationHistory": [
     {
+      "occupation": "SOLUTIONS ARCHITECT ASSOCIATE [12/23]",
+      "place": "AWS",
+      "projects": ["Certified in AWS Solutions Architect Associate exam."]
+    },
+    {
       "occupation": "UNIVERSITY SCHOLARSHIP [03/19 - 12/20]",
       "place": "UERJ",
       "projects": [
@@ -127,9 +134,7 @@
     {
       "occupation": "ENGLISH CERTIFICATE [11/18]",
       "place": "WISE UP",
-      "projects": [
-        "Advanced english level."
-      ]
+      "projects": ["Advanced english level."]
     }
   ],
   "codeContributions": [
