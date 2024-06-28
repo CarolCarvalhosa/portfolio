@@ -9,20 +9,21 @@
   "educationEndDate": "11/23",
   "summary": "I'm a software engineer that thrives in fast-paced environments where I can build great web and mobile products and mentor other engineers too.",
   "skills": [
-    "ReactJS",
-    "TypeScript",
-    "Advanced CSS",
-    "C# .NET Core, .NET Framework",
+    "NodeJS, ReactJS, JavaScript and TypeScript",
+    "UI/UX, Advanced CSS",
+    "C# .NET Core MVC, .NET Framework",
     "Git and TFS",
-    "SQL Server, PostgreSQL and MySQL",
-    "MVC",
-    "Docker, Podman",
-    "UI/UX",
-    "JavaScript",
+    "S3, DynamoDB, SQL Server, PostgreSQL and MySQL",
+    "Docker and Podman",
+    "ETL, Data Analysis and Data Visualization",
+    "Flutter, Python and Java",
+    "Troubleshooting and Debottlenecking",
+    "Performance Optimization",
+    "Data lake",
     "AzureDevOps and Scrum",
     "Jest and @testing-library",
     "Storybook and VS Code documentation",
-    "AWS"
+    "AWS, AWS Serverless Architecture, AWS Lambda"
   ],
   "avatar": "https://avatars.githubusercontent.com/u/43474430?v=4",
   "website": "https://carolcarvalhosa.github.io/portfolio/",
@@ -97,7 +98,8 @@
       "place": "Deloitte",
       "projects": [
         "Created AWS infrastructure for a CFD (Computer Fluid Dynamics) project that included creation of an HPC cluster and a Windows EC2 with a VPN.",
-        "Provided Software support and improvements on a serverless project using ReactJS, NodeJS, Git, AzureDevOps and Scrum. The Project was evolving into a e-commerce. I refactored the legacy structure and integrated some new features. In addition, I maintained the on-premise servers and created a containerized infrastructure for the applications using Docker.",
+        "Provided Software support and improvements on a serverless project using ReactJS, NodeJS, Git, AzureDevOps and Scrum. The Project was evolving into a e-commerce. I refactored the legacy structure and integrated some new features. In addition, I maintained the on-premise servers and created a containerized infrastructure for the applications using Docker. This project was using ETLs to bring data from the client's data lake into the application where I was able to make major structural and performance improvements.",
+        "Provided architectural guidance on a project using Flutter with a Java back-end. The Project goal was to create a mobile app that controlled production data from several databases for the client's internal use. I was responsible for the architecture of the project and the integration of the back-end with the front-end. I also provided guidance on the best practices for the project and helped the team to understand the Flutter framework.",
         "Built a ReactJS front-end and a Python FastAPI with AI models integration. The Project goal was to create a chatbot to help professionals to make strategic decisions quickly based on company data analysis."
       ]
     },
@@ -111,7 +113,7 @@
       ]
     },
     {
-      "occupation": "DEVELOPER INTERN [01/20 - 08/20]",
+      "occupation": "DEVELOPER [01/20 - 08/20]",
       "place": "Radix",
       "projects": [
         "Provided Software support and improvements using MVC architecture, C# .NET, Entity Framework, SQL Server, JS, HTML, CSS, TFS, AzureDevOps and Scrum. The Project goal was to manage trainings and documents for petroleum platform employees. The system is used globally and uses replication to synchronize applications across all platforms."

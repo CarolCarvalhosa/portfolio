@@ -115,7 +115,7 @@ const ResumePDF: React.FC = () => {
               <View style={styles.topicDescription}>
                 {data.workHistory.map(
                   (work, idx) =>
-                    idx <= 1 && (
+                    idx === 0 && (
                       <View key={idx} style={{ marginTop: '5px' }}>
                         <Text
                           style={{
@@ -243,7 +243,7 @@ const ResumePDF: React.FC = () => {
               <View style={styles.topicDescription}>
                 {data.workHistory.map(
                   (work, idx) =>
-                    idx > 1 && (
+                    idx > 0 && (
                       <View key={idx} style={{ marginTop: '10px' }}>
                         <Text
                           style={{
